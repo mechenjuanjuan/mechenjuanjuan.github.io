@@ -151,6 +151,8 @@
 
 
 
+  
+	<link rel="stylesheet" href="/dist/APlayer.min.css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -338,7 +340,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  字
+                  10字
                 </span>
               
 
@@ -354,7 +356,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  分钟
+                  1分钟
                 </span>
               
             </div>
@@ -388,7 +390,7 @@
 	  
 		<div>
     
-        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+        <div style="text-align:center;color: #ccc;font-size:22px;">------&ensp;&ensp;本文结束<span class="post-meta-divider"></span><i class="fa fa-paw"></i><span class="post-meta-divider"></span>感谢您的阅读&ensp;&ensp;------</div>
     
 </div>
 	  
@@ -402,7 +404,7 @@
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>官人，那里不可以~~</div>
+  <div>官人，打个赏呗~</div>
   <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
     <span>打赏</span>
   </button>
@@ -507,6 +509,7 @@
 
 
 
+		  
         </div>
         
           
@@ -590,12 +593,13 @@
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="http://www.baidu.com/" title="喵喵喵" target="_blank">喵喵喵</a>
+                    <a href="http://www.baidu.com/" title="KKK" target="_blank">KKK</a>
                   </li>
                 
               </ul>
             </div>
           
+		  <div id="aplayer" width="150px" height="50px"></div>
 
           
 
@@ -603,9 +607,7 @@
       </section>
 
       
-
       
-
     </div>
   </aside>
 
@@ -616,7 +618,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-snowflake-o"></i>
   </span>
@@ -624,7 +626,7 @@
 
   
 </div>
-
+<!--
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
@@ -636,11 +638,18 @@
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
+-->
 
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
-<span id="busuanzi_container_site_uv">本站访客数<span id="busuanzi_value_site_uv"></span>人次</span>
+
+<span id="busuanzi_container_site_uv">访问人数<span class="post-meta-divider"></span><span id="busuanzi_value_site_uv"></span></span>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<span id="busuanzi_container_site_pv">总访问量<span class="post-meta-divider"></span><span id="busuanzi_value_site_pv"></span></span>
         
 
 
@@ -841,3 +850,6 @@
 <script type="text/javascript" src="/js/src/daimayu.js"></script>-->
 <!--看板娘-->
 <script src="/live2d-widget/autoload.js"></script>
+<!--播放器-->
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
