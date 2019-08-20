@@ -2064,7 +2064,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #54ffee;
+  background: #ffdbff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3365,7 +3365,7 @@ img:hover {
 .headband {
   display: none;
 }
-.post-type-normal {
+.post-block {
   margin-bottom: 12px;
   background: #fff;
   padding: 40px;
@@ -3373,18 +3373,8 @@ img:hover {
   border-radius: 10px 10px 10px 10px;
 }
 * {
-  cursor: url("/images/click_d.ico"), auto !important;
-}
-:active {
   cursor: url("/images/click_u.ico"), auto !important;
 }
-#canvas {
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
-  min-width: 100%;
-  min-height: 100%;
-  height: auto;
-  width: auto;
-  z-index: -1;
+:active {
+  cursor: url("/images/click_d.ico"), auto !important;
 }
