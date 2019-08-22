@@ -940,9 +940,9 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 20px;
   font-size: 14px;
-  color: #555;
+  color: #6cf;
   background: #fff;
-  border: 2px solid #555;
+  border: 2px solid #6cf;
   text-decoration: none;
   border-radius: 2px;
   transition-property: background-color;
@@ -952,9 +952,9 @@ pre .javascript .function {
   line-height: 2;
 }
 .btn:hover {
-  border-color: #222;
+  border-color: #6cf;
   color: #fff;
-  background: #222;
+  background: #6cf;
 }
 .btn +.btn {
   margin: 0 0 8px 8px;
@@ -2064,7 +2064,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff661c;
+  background: #ffb6ac;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3366,9 +3366,6 @@ img:hover {
   display: none;
 }
 .post-block {
-  margin-bottom: 12px;
-  background: #fff;
-  padding: 40px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   border-radius: 10px 10px 10px 10px;
 }
@@ -3377,4 +3374,16 @@ img:hover {
 }
 :active {
   cursor: url("/images/click_d.ico"), auto !important;
+}
+#aplayer {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  border-radius: 10px 10px 10px 10px;
+}
+.header-inner {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  border-radius: 10px 10px 10px 10px;
+}
+.sidebar-inner {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  border-radius: 10px 10px 10px 10px;
 }

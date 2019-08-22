@@ -15,11 +15,25 @@ const ap = new APlayer({
 		{
             name: 'More One Night',//音频名称
             artist: '久保ユリカ&水瀬いのり',//音频艺术家
-            url: 'http://www.ytmp3.cn/down/60365.mp3',//音频外链
+            url: '/dist/musics/More One Night.mp3',//音频外链
             cover: '/dist/imgs/luoli.png', //音频封面
-			//lrc: '/dist/lrc/shuilai.lrc', //音频歌词，配合上面的lrcType使用
+			lrc: '/dist/lrc/MoreOneNight.lrc', //音频歌词，配合上面的lrcType使用
 			//theme: '#ebd0c2' //切换到此音频时的主题色，比上面的 theme 优先级高
         },
+		{
+            name: 'Puppet',
+            artist: 'Nightcore',
+            url: '/dist/musics/Puppet.mp3',
+            cover: '/dist/imgs/pupeet.png',
+			lrc: '/dist/lrc/puppet.lrc',
+        },
+		{
+			name: 'Lemon',
+            artist: '米津玄師',
+            url: '/dist/musics/lemon.mp3',
+            cover: '/dist/imgs/lemon.png',
+			lrc: '/dist/lrc/lemon.lrc',
+		},
         {
             name: 'Frontier(Cargo Remix)',
             artist: 'Cargo/VINAI/SCNDL',
@@ -30,23 +44,51 @@ const ap = new APlayer({
 		{
             name: 'Frontier',
             artist: 'Doctor Vox',
-            url: 'http://www.ytmp3.cn/down/53154.mp3',
+            url: '/dist/musics/Frontier.mp3',
             cover: '/dist/imgs/fron2.png',
 			lrc: '/dist/lrc/chun.lrc',
         },
         {
             name: 'Time Travel',
             artist: '岸部眞明',
-            url: 'http://www.ytmp3.cn/down/57529.mp3',
+            url: '/dist/musics/Time travel.mp3',
             cover: '/dist/imgs/jbzm.png', 
 			lrc: '/dist/lrc/chun.lrc', 
         },
-        {
-            name: '你不要担心',
-            artist: '野菊花',
-            url: 'http://www.ytmp3.cn/down/51124.mp3',
-            cover: '/dist/imgs/lemon.png',
-			//lrc: 'lrc1.lrc',
-        }
+		{
+			name: 'HYDRA',
+            artist: 'MYTH & ROID',
+            url: '/dist/musics/HYDRA.mp3',
+            cover: '/dist/imgs/yabei.png',
+			lrc: '/dist/lrc/HYDRA.lrc',
+		},
+		{
+			name: 'STYX HELIX',
+            artist: 'MYTH & ROID',
+            url: '/dist/musics/STYX HELIX.mp3',
+            cover: '/dist/imgs/leimu.png',
+			lrc: '/dist/lrc/STYX HELIX.lrc',
+		},
+		{
+			name: 'Time after time〜花舞う街で〜',
+            artist: '倉木麻衣',
+            url: '/dist/musics/Time after time.mp3',
+            cover: '/dist/imgs/time.png',
+			lrc: '/dist/lrc/time.lrc',
+		},
+		{
+			name: '是萝莉控真是太好了（Cover 初音ミク）',
+            artist: '东京塔子 / Hanser',
+            url: '/dist/musics/是萝莉控真是太好了（Cover 初音ミク）.mp3',
+            cover: '/dist/imgs/luoli2.png',
+			lrc: '/dist/lrc/luoli.lrc',
+		},
+		{
+			name: '瞳ニ映ル景色',
+            artist: '末廣健一郎',
+            url: '/dist/musics/瞳ニ映ル景色.mp3',
+            cover: '/dist/imgs/shaonv.png',
+			lrc: '/dist/lrc/chun.lrc',
+		},
     ]
 });
