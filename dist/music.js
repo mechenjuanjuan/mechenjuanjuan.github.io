@@ -24,7 +24,7 @@ const ap = new APlayer({
             name: 'Puppet',
             artist: 'Nightcore',
             url: '/dist/musics/Puppet.mp3',
-            cover: '/dist/imgs/pupeet.png',
+            cover: '/dist/imgs/puppet.png',
 			lrc: '/dist/lrc/puppet.lrc',
         },
 		{
@@ -90,5 +90,12 @@ const ap = new APlayer({
             cover: '/dist/imgs/shaonv.png',
 			lrc: '/dist/lrc/chun.lrc',
 		},
+		{
+			name: '一个人',
+            artist: '韩红',
+            url: '/dist/musics/一个人-韩红.mp3',
+            cover: '/dist/imgs/one1.png',
+			lrc: '/dist/lrc/one1.lrc',
+		}
     ]
 });
