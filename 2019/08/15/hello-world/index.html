@@ -153,6 +153,8 @@
 
   
 	<link rel="stylesheet" href="/dist/APlayer.min.css">
+	
+	<link rel="stylesheet" href="/live2d/css/live2d.css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -961,6 +963,19 @@
 		s.parentNode.insertBefore(bp, s);
 	})();
 </script>
+
+<!--看板娘一-->
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+	loadlive2d("live2d", "/live2d/model/kesshouban_v2/model.json");
+</script>
+
 </body>
 </html>
 <!--点击火花-->
@@ -972,8 +987,8 @@
 <!--代码雨-->
 <!--<canvas id="canvas" width="1440" height="900" ></canvas>
 <script type="text/javascript" src="/js/src/daimayu.js"></script>-->
-<!--看板娘-->
-<script src="/live2d-widget/autoload.js"></script>
+<!--看板娘二-->
+<!--<script src="/live2d-widget/autoload.js"></script>-->
 <!--播放器-->
 <script type="text/javascript" src="/dist/APlayer.min.js"></script>
 <script type="text/javascript" src="/dist/music.js"></script>
