@@ -15,7 +15,8 @@ const ap = new APlayer({
 		{
             name: 'More One Night',//音频名称
             artist: '久保ユリカ&水瀬いのり',//音频艺术家
-            url: '/dist/musics/More One Night.mp3',//音频外链
+            //url: '/dist/musics/More One Night.mp3',//音频外链
+			url: 'http://www.ytmp3.cn/down/60365.mp3',
             cover: '/dist/imgs/luoli.png', //音频封面
 			lrc: '/dist/lrc/MoreOneNight.lrc', //音频歌词，配合上面的lrcType使用
 			//theme: '#ebd0c2' //切换到此音频时的主题色，比上面的 theme 优先级高
