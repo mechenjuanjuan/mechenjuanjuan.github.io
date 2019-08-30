@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>chen77&#39;s Home</title>
+  <title>Chen77&#39;s Blog</title>
   
-  
+  <subtitle>Please don&#39;t sympathize with me. I&#39;m not alone. I&#39;m just single.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mechenjuanjuan.github.io/"/>
@@ -10,7 +10,7 @@
   <id>http://mechenjuanjuan.github.io/</id>
   
   <author>
-    <name>chen77</name>
+    <name>Chen77</name>
     
   </author>
   

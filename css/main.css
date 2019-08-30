@@ -1060,14 +1060,14 @@ pre .javascript .function {
   box-sizing: border-box;
   position: fixed;
   bottom: -100px;
-  right: 30px;
+  right: 75px;
   z-index: 1050;
   padding: 0 6px;
   width: initial;
-  background: #222;
+  background: #f90;
   font-size: 12px;
   opacity: 0.6;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   text-align: center;
   -webkit-transform: translateZ(0);
@@ -1523,6 +1523,9 @@ pre .javascript .function {
 .posts-expand .post-meta .post-description {
   font-size: 14px;
   margin-top: 2px;
+}
+.post-wordcount {
+  display: inline-block;
 }
 .post-meta-divider {
   margin: 0 0.5em;
@@ -2064,7 +2067,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff01ab;
+  background: #d7ffe7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3227,20 +3230,20 @@ img:hover {
   padding: 40px;
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-  border-radius: initial;
+  border-radius: 10px;
 }
 #posts > article + article .post-block {
   margin-top: 12px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  border-radius: initial;
+  border-radius: 10px;
 }
 .comments {
   padding: 40px;
   margin: initial;
-  margin-top: 12px;
+  margin-top: 5px;
   background: #fff;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
-  border-radius: initial;
+  border-radius: 10px;
 }
 .posts-expand {
   padding-top: initial;
@@ -3251,7 +3254,9 @@ img:hover {
 .post-nav-item {
   width: 48%;
 }
-.post-eof,
+.post-eof {
+  display: none !important;
+}
 .post-spread {
   display: block;
 }
@@ -3365,12 +3370,17 @@ img:hover {
 .headband {
   display: none;
 }
-article .post-block {
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
-  border-radius: 10px;
+.site-meta {
+  background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
+}
+#heart {
+  animation: heartAnimate 1.33s ease-in-out infinite;
+}
+.with-love {
+  color: #f00;
 }
 .main-inner {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 * {
   cursor: url("/images/click_u.ico"), auto !important;
@@ -3389,4 +3399,124 @@ article .post-block {
 .sidebar-inner {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
   border-radius: 10px 10px 10px 10px;
+}
+@-moz-keyframes heartAnimate {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 30% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@-webkit-keyframes heartAnimate {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 30% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@-o-keyframes heartAnimate {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 30% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes heartAnimate {
+  0%, 100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+  10%, 30% {
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  20%, 40%, 60%, 80% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  50%, 70% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 }
