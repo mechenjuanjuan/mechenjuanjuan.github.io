@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[My Blog]]></title>
+    <title><![CDATA[丫头]]></title>
     <url>%2F2019%2F08%2F16%2FmyBlog%2F</url>
-    <content type="text"><![CDATA[这是我的第一个博客哦！！ www.baidu.com loli - loli]]></content>
+    <content type="text"><![CDATA[喝醉的人还在不休 说留下的人早已远走 沿着街灯一直往南走 没人会停留 街边的风还在问候 说谁弄丢了谁的温柔 街上流浪的狗 孤独了多久 你是那年最烈的酒 让少年醉上了心头 有人哭着喊你别走 却没学会挽留 这城市风总是很大 孤独的人总是晚回家 谁的身上没有疤 那年你哭着说时间好怕 现在你一人在人群里挣扎 你学会笑了吗 明天我在何处天涯 那时你在谁的伞下 他能否把你送到家 你是那年最烈的酒 让少年醉上了心头 有人哭着喊你别走 却没学会挽留 这城市风总是很大 孤独的人总是晚回家 谁的身上没有疤 那年你哭着说时间好怕 现在你一人在人群里挣扎 你学会笑了吗 明天我在何处天涯 那时你在谁的伞下 他能否把你送到家]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>无题</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F08%2F15%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>hello</tag>
+      </tags>
   </entry>
 </search>

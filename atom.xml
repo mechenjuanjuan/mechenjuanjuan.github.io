@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mechenjuanjuan.github.io/"/>
-  <updated>2019-08-26T01:41:04.543Z</updated>
+  <updated>2019-09-03T10:02:43.066Z</updated>
   <id>http://mechenjuanjuan.github.io/</id>
   
   <author>
@@ -17,28 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>My	Blog</title>
+    <title>丫头</title>
     <link href="http://mechenjuanjuan.github.io/2019/08/16/myBlog/"/>
     <id>http://mechenjuanjuan.github.io/2019/08/16/myBlog/</id>
     <published>2019-08-16T07:35:51.164Z</published>
-    <updated>2019-08-26T01:41:04.543Z</updated>
+    <updated>2019-09-03T10:02:43.066Z</updated>
     
-    <content type="html"><![CDATA[<p>这是我的第一个博客哦！！</p><hr><p><a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p><hr><p>loli - loli</p>]]></content>
+    <content type="html"><![CDATA[<center><img width="100%" height="428" src="/post_image/qiutian.jpg"><br><font size="4">喝醉的人还在不休<p>说留下的人早已远走</p><p>沿着街灯一直往南走</p><p>没人会停留</p><p>街边的风还在问候</p><p>说谁弄丢了谁的温柔</p><p>街上流浪的狗</p><p>孤独了多久</p><p>你是那年最烈的酒</p><p>让少年醉上了心头</p><p>有人哭着喊你别走</p><p>却没学会挽留</p><p>这城市风总是很大</p><p>孤独的人总是晚回家</p><p>谁的身上没有疤</p><p>那年你哭着说时间好怕</p><p>现在你一人在人群里挣扎</p><p>你学会笑了吗</p><p>明天我在何处天涯</p><p>那时你在谁的伞下</p><p>他能否把你送到家</p><p>你是那年最烈的酒</p><p>让少年醉上了心头</p><p>有人哭着喊你别走</p><p>却没学会挽留</p><p>这城市风总是很大</p><p>孤独的人总是晚回家</p><p>谁的身上没有疤</p><p>那年你哭着说时间好怕</p><p>现在你一人在人群里挣扎</p><p>你学会笑了吗</p><p>明天我在何处天涯</p><p>那时你在谁的伞下</p><p>他能否把你送到家</p></font></center>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;这是我的第一个博客哦！！&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;www.baidu.com&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;loli - loli&lt;/p&gt;
+        &lt;center&gt;&lt;img width=&quot;100%&quot; height=&quot;428&quot; src=&quot;/post_image/qiutian.jpg&quot;&gt;
+&lt;br&gt;
+&lt;font size=&quot;4&quot;&gt;
+喝醉的人还在不休
 
+&lt;p&gt;说留下的人早已远走&lt;/p&gt;
+&lt;p&gt;沿着街灯一直往南走&lt;/p&gt;
+&lt;p&gt;没人
       
     
     </summary>
     
+      <category term="其他" scheme="http://mechenjuanjuan.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="无题" scheme="http://mechenjuanjuan.github.io/tags/%E6%97%A0%E9%A2%98/"/>
     
   </entry>
   
@@ -47,7 +53,7 @@
     <link href="http://mechenjuanjuan.github.io/2019/08/15/hello-world/"/>
     <id>http://mechenjuanjuan.github.io/2019/08/15/hello-world/</id>
     <published>2019-08-15T03:00:16.843Z</published>
-    <updated>2019-08-15T03:00:16.843Z</updated>
+    <updated>2019-09-03T06:34:21.913Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
@@ -60,6 +66,10 @@
     
     </summary>
     
+      <category term="其他" scheme="http://mechenjuanjuan.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="hello" scheme="http://mechenjuanjuan.github.io/tags/hello/"/>
     
   </entry>
   
