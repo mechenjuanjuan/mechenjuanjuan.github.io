@@ -2067,7 +2067,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff30e4;
+  background: #67798a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3377,7 +3377,7 @@ img:hover {
   animation: heartAnimate 1.33s ease-in-out infinite;
 }
 .with-love {
-  color: #00f;
+  color: #f00;
 }
 .main-inner {
   opacity: 0.7;
