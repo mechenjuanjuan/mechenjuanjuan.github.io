@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo部署到Coding]]></title>
+    <url>%2F2019%2F09%2F04%2Fchen_one%2F</url>
+    <content type="text"><![CDATA[不多BB，需要安装的工具就不说了 检查是否已经有SSH Key 在电脑桌面右键，打开Git Bash Here，检查是否已经有SSH Key，输入 1cd ~/.ssh 如果没有.ssh这个目录，则我们生成一个SSH，输入 1ssh-keygen -t rsa -C &quot;你的邮箱&quot; 接下来几步中系统会要你输入密码 (不设置密码的可以直接按三次回车)Enter passphrase (empty for no passphrase):&lt;输入密码&gt;Enter same passphrase again:&lt;再次输入密码&gt; 1这个密码是在你提交项目给服务器的时候使用的，可以为空，如果为空的话提交项目时则不用输入密码就能提交。 看到类似这样的界面，就成功设置ssh key了…..]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[茉莉雨]]></title>
     <url>%2F2019%2F08%2F16%2FRaindrops%2F</url>
     <content type="text"><![CDATA[垂柳斜向茉莉雨 向晚伴残笛 宣白落笔全是你 文细腻字飘逸人无语 梧桐秋风沙沙地 孤窗外疑是你 故事远去几华里 等结局我犹豫轻叹气 琴声里愁几许关于你 轻弹一首别离还在爱你 缘份竟然默许你离去 轻弹一首别离名为茉莉雨 园中花瓣落地了断了过去 而我酝酿情绪举杯引醉意 烛火摇曳皆因风起 泪晕墨迹我在想你 枫红愁绪秋冷了回忆 轻弹一首别离放不下你 吟唱心事秘密伤继续 轻弹一首别离名为茉莉雨 雨季后我溯溪找你的消息 古镇老墙添绿又一年过去 庭院开满茉莉却等不到你]]></content>

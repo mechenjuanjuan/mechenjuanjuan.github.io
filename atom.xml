@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mechenjuanjuan.github.io/"/>
-  <updated>2019-09-04T02:09:42.370Z</updated>
+  <updated>2019-09-04T08:35:57.909Z</updated>
   <id>http://mechenjuanjuan.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo部署到Coding</title>
+    <link href="http://mechenjuanjuan.github.io/2019/09/04/chen_one/"/>
+    <id>http://mechenjuanjuan.github.io/2019/09/04/chen_one/</id>
+    <published>2019-09-04T08:18:04.004Z</published>
+    <updated>2019-09-04T08:35:57.909Z</updated>
+    
+    <content type="html"><![CDATA[<p>不多BB，需要安装的工具就不说了</p><h3 id="检查是否已经有SSH-Key"><a href="#检查是否已经有SSH-Key" class="headerlink" title="检查是否已经有SSH Key"></a>检查是否已经有SSH Key</h3><ul><li><p>在电脑桌面右键，打开Git Bash Here，检查是否已经有SSH Key，输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure></li><li><p>如果没有.ssh这个目录，则我们生成一个SSH，输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的邮箱&quot;</span><br></pre></td></tr></table></figure></li><li><p>接下来几步中系统会要你输入密码 (不设置密码的可以直接按三次回车)<br>Enter passphrase (empty for no passphrase):&lt;输入密码&gt;<br>Enter same passphrase again:&lt;再次输入密码&gt; </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这个密码是在你提交项目给服务器的时候使用的，可以为空，如果为空的话提交项目时则不用输入密码就能提交。</span><br></pre></td></tr></table></figure></li><li><p>看到类似这样的界面，就成功设置ssh key了<br>…..</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;不多BB，需要安装的工具就不说了&lt;/p&gt;
+&lt;h3 id=&quot;检查是否已经有SSH-Key&quot;&gt;&lt;a href=&quot;#检查是否已经有SSH-Key&quot; class=&quot;headerlink&quot; title=&quot;检查是否已经有SSH Key&quot;&gt;&lt;/a&gt;检查是否已经有SSH Key&lt;/h3&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/categories/Hexo/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>茉莉雨</title>
