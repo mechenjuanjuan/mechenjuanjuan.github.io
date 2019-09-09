@@ -76,7 +76,7 @@
 
 
 
-  <meta name="keywords" content="hello,">
+  <meta name="keywords" content="Hello,">
 
 
 
@@ -90,14 +90,14 @@
 
 
 <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="hello">
+<meta name="keywords" content="Hello">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hello World">
 <meta property="og:url" content="http://mechenjuanjuan.github.io/2019/08/15/hello-world/index.html">
 <meta property="og:site_name" content="Chen77&#39;s Blog">
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-04T02:23:58.025Z">
+<meta property="og:updated_time" content="2019-09-09T09:13:02.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello World">
 <meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
@@ -150,12 +150,14 @@
 	<link rel="stylesheet" href="/dist/APlayer.min.css">
 	
 	<link rel="stylesheet" href="/live2d/css/live2d.css">
+	
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
   
   
     
+  
   
 
   <div class="container sidebar-position-left page-post-detail">
@@ -174,7 +176,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Please don't sympathize with me. I'm not alone. I'm just single.</p>
+        <p class="site-subtitle">愿喜欢和合适撞个满怀</p>
       
   </div>
 
@@ -362,8 +364,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/Other/" itemprop="url" rel="index">
+                    <span itemprop="name">Other</span>
                   </a>
                 </span>
 
@@ -457,7 +459,7 @@
 	  
 		<div>
     
-        <div style="width:100%;text-align:center;color: #ccc;font-size:22px;">------&ensp;&ensp;本文结束<span class="post-meta-divider"></span><i class="fa fa-paw"></i><span class="post-meta-divider"></span>感谢您的阅读&ensp;&ensp;------</div>
+        <div style="width:100%;text-align:center;color: #ccc;font-size:22px;">------&ensp;&ensp;本文到此结束<span class="post-meta-divider"></span><i class="fa fa-paw"></i><span class="post-meta-divider"></span>感谢您的阅读&ensp;&ensp;------</div>
     
 </div>
 	  
@@ -521,11 +523,23 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
+        <div class="post-tags" id="post-tags">
           
-            <a href="/tags/hello/" rel="tag"><i class="fa fa-tag"></i> hello</a>
+            <a href="/tags/Hello/" rel="tag"><i class="fa fa-tag"></i> Hello</a>
           
         </div>
+		<script type="text/javascript">
+			var tagsall=document.getElementsByClassName("post-tags")
+			for (var i = tagsall.length - 1; i >= 0; i--){
+				var tags=tagsall[i].getElementsByTagName("a");
+				for (var j = tags.length - 1; j >= 0; j--) {
+					var r=Math.floor(Math.random()*75+130);
+					var g=Math.floor(Math.random()*75+100);
+					var b=Math.floor(Math.random()*75+80);
+					tags[j].style.background = "rgb("+r+","+g+","+b+")";
+				}
+			}                        
+		</script>
       
 
       
@@ -668,7 +682,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -679,7 +693,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -690,7 +704,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -794,12 +808,12 @@
 			
 			<div id="myCanvasContainer" class="widget tagcloud">
 				<canvas width="250" height="250" id="resCanvas" style="margin-left: -10px;">
-					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello/">hello</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无题/">无题</a><span class="tag-list-count">1</span></li></ul>
+					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coding/">Coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hello/">Hello</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Time/">Time</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无题/">无题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/茉莉雨/">茉莉雨</a><span class="tag-list-count">1</span></li></ul>
 				</canvas>
 			</div>
 		</div>
 	
-	  
+	
     </div>
   </aside>
 
