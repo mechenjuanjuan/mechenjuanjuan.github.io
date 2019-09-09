@@ -2067,7 +2067,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff55f7;
+  background: #ff0036;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3369,6 +3369,21 @@ img:hover {
 }
 .headband {
   display: none;
+}
+.tag-cloud a {
+  border: 0px;
+  padding: 0px 10px;
+  border-radius: 10px;
+}
+#post-tags a {
+  color: #fff;
+  border: 0px;
+  padding: 0px 10px;
+  border-radius: 10px;
+}
+#post-tags a:hover {
+  color: #6cf;
+  border-bottom: 1px solid #555;
 }
 .site-meta {
   background-image: linear-gradient(90deg, #f79533 0%, #f37055 15%, #ef4e7b 30%, #a166ab 44%, #5073b8 58%, #1098ad 72%, #07b39b 86%, #6dba82 100%);
