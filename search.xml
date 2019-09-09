@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hexo 页脚增加网站运行时间统计]]></title>
+    <title><![CDATA[Hexo 实现随机彩色标签]]></title>
     <url>%2F2019%2F09%2F09%2Fchen_two%2F</url>
     <content type="text"></content>
       <categories>
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Time</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>Tags</tag>
       </tags>
   </entry>
   <entry>

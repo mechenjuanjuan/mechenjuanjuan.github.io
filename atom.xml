@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mechenjuanjuan.github.io/"/>
-  <updated>2019-09-09T02:09:46.295Z</updated>
+  <updated>2019-09-09T09:57:45.450Z</updated>
   <id>http://mechenjuanjuan.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo 页脚增加网站运行时间统计</title>
+    <title>Hexo 实现随机彩色标签</title>
     <link href="http://mechenjuanjuan.github.io/2019/09/09/chen_two/"/>
     <id>http://mechenjuanjuan.github.io/2019/09/09/chen_two/</id>
     <published>2019-09-09T02:01:25.267Z</published>
-    <updated>2019-09-09T02:09:46.295Z</updated>
+    <updated>2019-09-09T09:57:45.450Z</updated>
     
     <summary type="html">
     
@@ -30,7 +30,11 @@
       <category term="Hexo" scheme="http://mechenjuanjuan.github.io/categories/Hexo/"/>
     
     
-      <category term="Time" scheme="http://mechenjuanjuan.github.io/tags/Time/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/tags/Hexo/"/>
+    
+      <category term="Next" scheme="http://mechenjuanjuan.github.io/tags/Next/"/>
+    
+      <category term="Tags" scheme="http://mechenjuanjuan.github.io/tags/Tags/"/>
     
   </entry>
   
@@ -76,9 +80,9 @@
     <link href="http://mechenjuanjuan.github.io/2019/08/16/Raindrops/"/>
     <id>http://mechenjuanjuan.github.io/2019/08/16/Raindrops/</id>
     <published>2019-08-16T07:35:51.164Z</published>
-    <updated>2019-09-09T09:12:30.923Z</updated>
+    <updated>2019-09-09T09:54:25.688Z</updated>
     
-    <content type="html"><![CDATA[<center><img width="818px" height="328px" src="/post_image/qiutian.jpg"><br><font size="4"><p>垂柳斜向茉莉雨</p><p>向晚伴残笛</p><p>宣白落笔全是你</p><a id="more"></a><p>文细腻字飘逸人无语</p><p>梧桐秋风沙沙地</p><p>孤窗外疑是你</p><p>故事远去几华里</p><p>等结局我犹豫轻叹气</p><p>琴声里愁几许关于你</p><p>轻弹一首别离还在爱你</p><p>缘份竟然默许你离去</p><p>轻弹一首别离名为茉莉雨</p><p>园中花瓣落地了断了过去</p><p>而我酝酿情绪举杯引醉意</p><p>烛火摇曳皆因风起</p><p>泪晕墨迹我在想你</p><p>枫红愁绪秋冷了回忆</p><p>轻弹一首别离放不下你</p><p>吟唱心事秘密伤继续</p><p>轻弹一首别离名为茉莉雨</p><p>雨季后我溯溪找你的消息</p><p>古镇老墙添绿又一年过去</p><p>庭院开满茉莉却等不到你</p></font></center>]]></content>
+    <content type="html"><![CDATA[<center><img width="818px" height="328px" src="/post_image/qiutian.jpg"><br><font size="4"><p>垂柳斜向茉莉雨</p><p>向晚伴残笛</p><p>宣白落笔全是你</p></font></center><a id="more"></a><center>文细腻字飘逸人无语<p>梧桐秋风沙沙地</p><p>孤窗外疑是你</p><p>故事远去几华里</p><p>等结局我犹豫轻叹气</p><p>琴声里愁几许关于你</p><p>轻弹一首别离还在爱你</p><p>缘份竟然默许你离去</p><p>轻弹一首别离名为茉莉雨</p><p>园中花瓣落地了断了过去</p><p>而我酝酿情绪举杯引醉意</p><p>烛火摇曳皆因风起</p><p>泪晕墨迹我在想你</p><p>枫红愁绪秋冷了回忆</p><p>轻弹一首别离放不下你</p><p>吟唱心事秘密伤继续</p><p>轻弹一首别离名为茉莉雨</p><p>雨季后我溯溪找你的消息</p><p>古镇老墙添绿又一年过去</p><p>庭院开满茉莉却等不到你</p></center>]]></content>
     
     <summary type="html">
     
@@ -89,6 +93,7 @@
 &lt;p&gt;垂柳斜向茉莉雨&lt;/p&gt;
 &lt;p&gt;向晚伴残笛&lt;/p&gt;
 &lt;p&gt;宣白落笔全是你&lt;/p&gt;
+&lt;/font&gt;&lt;/center&gt;
     
     </summary>
     
