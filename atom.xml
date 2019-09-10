@@ -3,7 +3,7 @@
   <title>Chen77&#39;s Blog</title>
   
   <subtitle>愿喜欢和合适撞个满怀</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/chen77o/atom.xml" rel="self"/>
   
   <link href="http://chen77o.gitee.io/"/>
   <updated>2019-09-09T09:57:45.450Z</updated>
@@ -67,11 +67,11 @@
       <category term="Hexo" scheme="http://chen77o.gitee.io/categories/Hexo/"/>
     
     
-      <category term="Coding" scheme="http://chen77o.gitee.io/tags/Coding/"/>
-    
       <category term="Hexo" scheme="http://chen77o.gitee.io/tags/Hexo/"/>
     
       <category term="Next" scheme="http://chen77o.gitee.io/tags/Next/"/>
+    
+      <category term="Coding" scheme="http://chen77o.gitee.io/tags/Coding/"/>
     
   </entry>
   
