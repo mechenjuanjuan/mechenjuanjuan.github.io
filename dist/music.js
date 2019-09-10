@@ -18,7 +18,7 @@ const ap = new APlayer({
             url: '/dist/musics/More One Night.mp3',//音频外链
 			//url: 'http://www.ytmp3.cn/down/60365.mp3',
             cover: '/dist/imgs/luoli.png', //音频封面
-			lrc: '/dist/lrc/MoreOneNight.lrc', //音频歌词，配合上面的lrcType使用
+			lrc: '/dist/lrc/MoreOneNight.lrc' //音频歌词，配合上面的lrcType使用
 			//theme: '#000' //切换到此音频时的主题色，比上面的 theme 优先级高
         },
 		{
@@ -26,35 +26,35 @@ const ap = new APlayer({
             artist: 'Nightcore',
             url: '/dist/musics/Puppet.mp3',
             cover: '/dist/imgs/puppet.png',
-			lrc: '/dist/lrc/puppet.lrc',
+			lrc: '/dist/lrc/puppet.lrc'
         },
 		{
 			name: 'Lemon',
             artist: '米津玄師',
             url: '/dist/musics/lemon.mp3',
             cover: '/dist/imgs/lemon.png',
-			lrc: '/dist/lrc/lemon.lrc',
+			lrc: '/dist/lrc/lemon.lrc'
 		},
         {
             name: 'Frontier(Cargo Remix)',
             artist: 'Cargo/VINAI/SCNDL',
             url: '/dist/musics/Frontier (Cargo Remix).mp3',
             cover: '/dist/imgs/fron1.png',
-			lrc: '/dist/lrc/chun.lrc',
+			lrc: '/dist/lrc/chun.lrc'
         },
 		{
             name: 'Frontier',
             artist: 'Doctor Vox',
             url: '/dist/musics/Frontier.mp3',
             cover: '/dist/imgs/fron2.png',
-			lrc: '/dist/lrc/chun.lrc',
+			lrc: '/dist/lrc/chun.lrc'
         },
 		{
 			name: '一个人',
             artist: '韩红',
             url: '/dist/musics/一个人-韩红.mp3',
             cover: '/dist/imgs/one1.png',
-			lrc: '/dist/lrc/one1.lrc',
+			lrc: '/dist/lrc/one1.lrc'
 		}
     ]
 });
