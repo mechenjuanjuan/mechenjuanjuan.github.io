@@ -1060,7 +1060,7 @@ pre .javascript .function {
   box-sizing: border-box;
   position: fixed;
   bottom: -100px;
-  right: 30px;
+  right: 28px;
   z-index: 1050;
   padding: 0 6px;
   width: initial;
@@ -2067,7 +2067,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fbda0e;
+  background: #ffb38c;
 }
 .links-of-blogroll {
   font-size: 13px;
