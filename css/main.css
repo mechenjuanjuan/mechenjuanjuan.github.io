@@ -1342,6 +1342,15 @@ pre .javascript .function {
   padding: 3px;
   border: 1px solid #ddd;
 }
+.posts-expand .post-body img:hover {
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
+  transform: scale(1.03);
+  border: 1px solid #6cf;
+  box-shadow: 0 3px 15px 2px #6cf;
+}
 .posts-expand .post-body .fancybox img {
   margin: 0 auto 25px;
 }
@@ -2067,7 +2076,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #46ffa6;
+  background: #883478;
 }
 .links-of-blogroll {
   font-size: 13px;
