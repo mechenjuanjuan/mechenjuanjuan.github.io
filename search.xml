@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Hexo 部署到码云]]></title>
-    <url>%2F2019%2F09%2F09%2Fchen_two%2F</url>
+    <url>%2Fchen77o%2F2019%2F09%2F09%2Fchen_two%2F</url>
     <content type="text"><![CDATA[注册码云 码云官网：https://gitee.com/ 注册完成后创建一个新仓库，如下图 创建完成后，查看路径 设置密钥 我是直接使用https的，ssh我就不详细说了 复制到hexo根目录下_config.yml的这个位置 然后通过Git Bash Here 123hexo cleanhexo ghexo d 上传的时候系统会有弹框叫你输入你的码云用户名和密码 设置Page服务访问博客 代码成功上传码云后 部署目录和自定义域名可空，右边有免费试用版的 这个路径访问的时候可能会出现无法访问此网站或者404亦或者图标，样式，图片没效果？ 解决： 复制这两个地方 到hexo根目录下_config.yml里的这个位置 在进行那三条命令，上传到码云，刷新就有了 1如果还不能出现博客页面，再更新一下pages服务]]></content>
       <categories>
         <category>Hexo</category>
@@ -15,7 +15,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo部署到Coding]]></title>
-    <url>%2F2019%2F09%2F04%2Fchen_one%2F</url>
+    <url>%2Fchen77o%2F2019%2F09%2F04%2Fchen_one%2F</url>
     <content type="text"><![CDATA[需要安装的工具我就不多介绍了 注册Coding Cdoing官网：https://coding.net/ 注册完成后创建一个新项目，如下图 1项目名称、项目描述随意填写。然后点击创建。 配置SSH 在电脑桌面右键，打开Git Bash Here，检查是否已经有SSH Key，输入1cd ~/.ssh 出现bash: cd: /c/Users/Administrator/.ssh: No such file or directory 。说明没有.ssh这个目录 如果没有.ssh这个目录，则我们生成一个SSH，输入 1ssh-keygen -t rsa -C &quot;你的邮箱&quot; 接下来几步中系统会要你输入密码 (不设置密码的可以直接按三次回车)Enter passphrase (empty for no passphrase):&lt;输入密码&gt;Enter same passphrase again:&lt;再次输入密码&gt; 1这个密码是在你提交项目给服务器的时候使用的，可以为空，如果为空的话提交项目时则不用输入密码就能提交。 看到类似这样的界面，就表示成功生成ssh key了 然后查看公钥 1cat ~/.ssh/id_rsa.pub 将这些内容复制到这个地方，如下图： 然后直接把刚才复制的内容粘贴进去,点击添加即可。 测试SSh是否配置成功 在Git Bash Here 中输入 1ssh -T git@git.coding.net 如果显示以下则说明coding中的ssh配置成功 1Hello username You&apos;ve connected to Coding.net by SSH successfully! 如下图显示(权限被拒绝)不要慌： 也可能出现无法建立真实性的问题： 123The authenticity of host &apos;git.coding.net (118.25.166.124)&apos; can&apos;t be established.RSA key fingerprint is SHA256:jok3FH7q5LJ6qvE7iPNehBgXRw51ErE77S0Dn+Vg/Ik.Are you sure you want to continue connecting (yes/no)? 解决：首次建立链接会要求信任主机，在Git Bash Here 中输入 1ssh -T git@e.coding.net yes回车 配置hexo 打开hexo站点根目录 打开Coding新建的项目，找到这个地方，复制路径，如下图 然后在_config.yml修改配置 配置完，执行以下命令 123hexo cleanhexo ghexo d 成功如下 查看部署的成功的代码 静态访问 网站名称随便取，复制路径在浏览器访问即可 自定义域名（有域名者）]]></content>
       <categories>
         <category>Hexo</category>
@@ -28,7 +28,7 @@
   </entry>
   <entry>
     <title><![CDATA[茉莉雨]]></title>
-    <url>%2F2019%2F08%2F16%2FRaindrops%2F</url>
+    <url>%2Fchen77o%2F2019%2F08%2F16%2FRaindrops%2F</url>
     <content type="text"><![CDATA[垂柳斜向茉莉雨 向晚伴残笛 宣白落笔全是你 文细腻字飘逸人无语 梧桐秋风沙沙地 孤窗外疑是你 故事远去几华里 等结局我犹豫轻叹气 琴声里愁几许关于你 轻弹一首别离还在爱你 缘份竟然默许你离去 轻弹一首别离名为茉莉雨 园中花瓣落地了断了过去 而我酝酿情绪举杯引醉意 烛火摇曳皆因风起 泪晕墨迹我在想你 枫红愁绪秋冷了回忆 轻弹一首别离放不下你 吟唱心事秘密伤继续 轻弹一首别离名为茉莉雨 雨季后我溯溪找你的消息 古镇老墙添绿又一年过去 庭院开满茉莉却等不到你]]></content>
       <categories>
         <category>Other</category>
@@ -40,7 +40,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F08%2F15%2Fhello-world%2F</url>
+    <url>%2Fchen77o%2F2019%2F08%2F15%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
       <categories>
         <category>Other</category>
