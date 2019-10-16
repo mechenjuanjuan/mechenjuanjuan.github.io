@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1fe53397"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="Git,Svn,Idea,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Chen77's Blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="1、远程仓库1.1 添加远程库上一篇我们已经在本地创建了一个Git仓库，又想让其他人来协作开发，此时就可以把本地仓库同步到远程仓库，同时还增加了本地仓库的一个备份。常用的远程仓库就是github：https://github.com/，接下来我们演示如何将本地代码同步到github。 1.1.1 在github上创建仓库首先你得在github上创建一个账号，这个就不演示了。然后在github上创建">
+<meta name="keywords" content="Git,Svn,Idea">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git使用详情（二）">
+<meta property="og:url" content="https://mechenjuanjuan.github.io/2019/10/14/chen_02/index.html">
+<meta property="og:site_name" content="Chen77&#39;s Blog">
+<meta property="og:description" content="1、远程仓库1.1 添加远程库上一篇我们已经在本地创建了一个Git仓库，又想让其他人来协作开发，此时就可以把本地仓库同步到远程仓库，同时还增加了本地仓库的一个备份。常用的远程仓库就是github：https://github.com/，接下来我们演示如何将本地代码同步到github。 1.1.1 在github上创建仓库首先你得在github上创建一个账号，这个就不演示了。然后在github上创建">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/1.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/2.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/3.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/4.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/5.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/6.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/7.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/8.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/9.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/10.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/11.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/12.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/13.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/14.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/15.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/16.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/17.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/18.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/19.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/20.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/21.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/22.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/23.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/24.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/25.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/26.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/27.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/28.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/29.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/30.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/31.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/32.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/33.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/34.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/35.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/36.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/37.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/38.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/39.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/40.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/41.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/42.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/43.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/44.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/45.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/46.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/47.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/48.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/49.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/50.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/51.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/52.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/53.png">
+<meta property="og:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/54.png">
+<meta property="og:updated_time" content="2019-10-14T09:59:59.136Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git使用详情（二）">
+<meta name="twitter:description" content="1、远程仓库1.1 添加远程库上一篇我们已经在本地创建了一个Git仓库，又想让其他人来协作开发，此时就可以把本地仓库同步到远程仓库，同时还增加了本地仓库的一个备份。常用的远程仓库就是github：https://github.com/，接下来我们演示如何将本地代码同步到github。 1.1.1 在github上创建仓库首先你得在github上创建一个账号，这个就不演示了。然后在github上创建">
+<meta name="twitter:image" content="https://mechenjuanjuan.github.io/post_image/chen_02/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '24KTHYHWFB',
+      apiKey: 'e44cd65fa85b2604f69cb9f4d3b51c46',
+      indexName: 'chen77',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"请输入关键字","hits_empty":"没找到与 ${query} 相关的内容哦！","hits_stats":"${hits} 条相关记录，共耗时 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://mechenjuanjuan.github.io/2019/10/14/chen_02/">
+
+
+
+
+
+  <title>Git使用详情（二） | Chen77's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+	<link rel="stylesheet" href="/dist/APlayer.min.css">
+	
+	<link rel="stylesheet" href="/live2d/css/live2d.css">
+	 
+	 <!--回到顶部-->
+	 <link rel="stylesheet" href="/top/top.css">
+	
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+  
+    
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chen77's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">愿喜欢跟合适撞个满怀</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+			<span class="badge"></span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+			<span class="badge"></span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+			<span class="badge"></span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+			<span class="badge"></span>
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+			<span class="badge"></span>
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">			
+            
+
+  <div id="posts" class="posts-expand">
+	
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div id="aplayer" width="100%" height="100%"></div>
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mechenjuanjuan.github.io/2019/10/14/chen_02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chen77">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chen77's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Git使用详情（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-14T11:58:41+08:00">
+                2019-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+		  
+		  
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                 <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.1k字
+                </span>
+              
+		  
+
+          
+		 
+             <span id="/2019/10/14/chen_02/" class="leancloud_visitors" data-flag-title="Git使用详情（二）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count">：</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1、远程仓库"><a href="#1、远程仓库" class="headerlink" title="1、远程仓库"></a>1、远程仓库</h2><h5 id="1-1-添加远程库"><a href="#1-1-添加远程库" class="headerlink" title="1.1 添加远程库"></a>1.1 添加远程库</h5><p>上一篇我们已经在本地创建了一个Git仓库，又想让其他人来协作开发，此时就可以把本地仓库同步到远程仓库，同时还增加了本地仓库的一个备份。<br>常用的远程仓库就是github：<a href="https://github.com/，接下来我们演示如何将本地代码同步到github。" target="_blank" rel="noopener">https://github.com/，接下来我们演示如何将本地代码同步到github。</a></p>
+<h5 id="1-1-1-在github上创建仓库"><a href="#1-1-1-在github上创建仓库" class="headerlink" title="1.1.1 在github上创建仓库"></a>1.1.1 在github上创建仓库</h5><p>首先你得在github上创建一个账号，这个就不演示了。然后在github上创建一个仓库：</p>
+<center><img src="/post_image/chen_02/1.png"></center>
+<a id="more"></a>
+<center><img src="/post_image/chen_02/2.png"></center>
+点击“create repository”按钮仓库就创建成功了。
+Github支持两种同步方式“https”和“ssh”。如果使用https很简单基本不需要配置就可以使用，但是每次提交代码和下载代码时都需要输入用户名和密码。如果使用ssh方式就需要客户端先生成一个密钥对，即一个公钥一个私钥。然后还需要把公钥放到githib的服务器上。这两种方式在实际开发中都用应用，所以我们都需要掌握。接下来我们先看ssh方式。
+
+<h5 id="1-1-2-ssh协议"><a href="#1-1-2-ssh协议" class="headerlink" title="1.1.2 ssh协议"></a>1.1.2 ssh协议</h5><h6 id="1-1-2-1-什么是ssh"><a href="#1-1-2-1-什么是ssh" class="headerlink" title="1.1.2.1 什么是ssh?"></a>1.1.2.1 什么是ssh?</h6><p>SSH 为 Secure Shell（安全外壳协议）的缩写，由 IETF 的网络小组（Network Working Group）所制定。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。</p>
+<h6 id="1-1-2-2-基于密匙的安全验证"><a href="#1-1-2-2-基于密匙的安全验证" class="headerlink" title="1.1.2.2 基于密匙的安全验证"></a>1.1.2.2 基于密匙的安全验证</h6><p>使用ssh协议通信时，推荐使用基于密钥的验证方式。你必须为自己创建一对密匙，并把公用密匙放在需要访问的服务器上。如果你要连接到SSH服务器上，客户端软件就会向服务器发出请求，请求用你的密匙进行安全验证。服务器收到请求之后，先在该服务器上你的主目录下寻找你的公用密匙，然后把它和你发送过来的公用密匙进行比较。如果两个密匙一致，服务器就用公用密匙加密“质询”（challenge）并把它发送给客户端软件。客户端软件收到“质询”之后就可以用你的私人密匙解密再把它发送给服务器。</p>
+<h6 id="1-1-2-3-ssh密钥生成"><a href="#1-1-2-3-ssh密钥生成" class="headerlink" title="1.1.2.3 ssh密钥生成"></a>1.1.2.3 ssh密钥生成</h6><p>在windows下我们可以使用 Git Bash.exe来生成密钥，可以通过开始菜单或者右键菜单打开Git Bash</p>
+<center><img src="/post_image/chen_02/3.png"></center>
+git bash 执行命令,生命公钥和私钥
+命令: ssh-keygen -t rsa
+<center><img src="/post_image/chen_02/4.png"></center>
+执行命令完成后,在window本地用户.ssh目录C:\Users\用户名\.ssh下面生成如下名称的公钥和私钥:
+<center><img src="/post_image/chen_02/5.png"></center>
+
+<h6 id="1-1-2-4-ssh密钥配置"><a href="#1-1-2-4-ssh密钥配置" class="headerlink" title="1.1.2.4 ssh密钥配置"></a>1.1.2.4 ssh密钥配置</h6><p>密钥生成后需要在github上配置密钥本地才可以顺利访问。</p>
+<center><img src="/post_image/chen_02/6.png"></center>
+<center><img src="/post_image/chen_02/7.png"></center>
+在key部分将id_rsa.pub文件内容添加进去，然后点击“Add SSH key”按钮完成配置。
+
+<h5 id="1-1-3-同步到远程仓库"><a href="#1-1-3-同步到远程仓库" class="headerlink" title="1.1.3 同步到远程仓库"></a>1.1.3 同步到远程仓库</h5><p>同步到远程仓库可以使用git bash也可以使用tortoiseGit</p>
+<h6 id="1-1-3-1-使用git-bash"><a href="#1-1-3-1-使用git-bash" class="headerlink" title="1.1.3.1 使用git bash"></a>1.1.3.1 使用git bash</h6><p>在仓库所在的目录（D:\temp\git\repository）点击右键选择“Git Bash Here”，启动git bash程序。</p>
+<center><img src="/post_image/chen_02/8.png"></center>
+然后在git bash中执行如下语句：
+git remote add origin git@github.com:sublun/mytest.git
+git push -u origin master
+注意：其中红色字体部分需要替换成个人的用户名。
+
+<p>如何出现如下错误：</p>
+<center><img src="/post_image/chen_02/9.png"></center>
+可以先执行如下命令，然后再执行上面的命令
+$ git remote rm origin
+<center><img src="/post_image/chen_02/10.png"></center>
+
+<h6 id="1-1-3-2-使用TortoiseGit同步"><a href="#1-1-3-2-使用TortoiseGit同步" class="headerlink" title="1.1.3.2 使用TortoiseGit同步"></a>1.1.3.2 使用TortoiseGit同步</h6><p>一、由于TortoiseGit使用的ssh工具是“PuTTY”git Bash使用的ssh工具是“openSSH”，如果想让TortoiseGit也使用刚才生成的密钥可以做如下配置：</p>
+<center><img src="/post_image/chen_02/11.png"></center>
+<center><img src="/post_image/chen_02/12.png"></center>
+Url：远程仓库的地址
+推送URL：也是相同的
+Putty密钥：选择刚才生成的密钥中的私钥
+
+<p>二、同步。在本地仓库的文件夹中单击右键，选择“Git同步”</p>
+<center><img src="/post_image/chen_02/13.png"></center>
+<center><img src="/post_image/chen_02/14.png"></center>
+
+<h5 id="1-2-从远程仓库克隆"><a href="#1-2-从远程仓库克隆" class="headerlink" title="1.2 从远程仓库克隆"></a>1.2 从远程仓库克隆</h5><p>克隆远程仓库也就是从远程把仓库复制一份到本地，克隆后会创建一个新的本地仓库。选择一个任意部署仓库的目录，然后克隆远程仓库。</p>
+<h6 id="1-2-1-使用git-bash："><a href="#1-2-1-使用git-bash：" class="headerlink" title="1.2.1 使用git bash："></a>1.2.1 使用git bash：</h6><blockquote>
+<p>$ git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:sublun/mytest.git</p>
+</blockquote>
+<h6 id="1-2-2-使用TortoiseGit："><a href="#1-2-2-使用TortoiseGit：" class="headerlink" title="1.2.2 使用TortoiseGit："></a>1.2.2 使用TortoiseGit：</h6><p>在任意目录点击右键:</p>
+<center><img src="/post_image/chen_02/15.png"></center>
+<center><img src="/post_image/chen_02/16.png"></center>
+<center><img src="/post_image/chen_02/17.png"></center>
+
+<h5 id="1-3-从远程仓库取代码"><a href="#1-3-从远程仓库取代码" class="headerlink" title="1.3 从远程仓库取代码"></a>1.3 从远程仓库取代码</h5><p>Git中从远程的分支获取最新的版本到本地有这样2个命令：<br>1.git fetch：相当于是从远程获取最新版本到本地，不会自动merge（合并代码）<br>2.git pull：相当于是从远程获取最新版本并merge到本地<br>上述命令其实相当于git fetch 和 git merge<br>在实际使用中，git fetch更安全一些<br>因为在merge前，我们可以查看更新情况，然后再决定是否合并<br>如果使用TortoiseGit的话可以从右键菜单中点击“拉取”（pull）或者“获取”（fetch）</p>
+<center><img src="/post_image/chen_02/18.png"></center>
+
+
+<h5 id="1-4-搭建私有Git服务器"><a href="#1-4-搭建私有Git服务器" class="headerlink" title="1.4 搭建私有Git服务器"></a>1.4 搭建私有Git服务器</h5><h6 id="1-4-1-服务器搭建"><a href="#1-4-1-服务器搭建" class="headerlink" title="1.4.1 服务器搭建"></a>1.4.1 服务器搭建</h6><p>远程仓库实际上和本地仓库没啥不同，纯粹为了7x24小时开机并交换大家的修改。GitHub就是一个免费托管开源代码的远程仓库。但是对于某些视源代码如生命的商业公司来说，既不想公开源代码，又舍不得给GitHub交保护费，那就只能自己搭建一台Git服务器作为私有仓库使用。<br>搭建Git服务器需要准备一台运行Linux的机器，在此我们使用CentOS。以下为安装步骤：<br>yum -y install curl curl-devel zlib-devel openssl-devel perl cpio expat-devel gettext-devel gcc cc<br>2、下载git-2.5.0.tar.gz<br>1）解压缩<br>2）cd git-2.5.0<br>3）autoconf<br>4）./configure<br>5）make<br>6）make install<br>3、添加用户<br>adduser -r -c ‘git version control’ -d /home/git -m git<br>此命令执行后会创建/home/git目录作为git用户的主目录。<br>5、设置密码<br>passwd git<br>输入两次密码<br>6、切换到git用户<br>su git<br>7、创建git仓库<br>git –bare init /home/git/first<br>注意：如果不使用“–bare”参数，初始化仓库后，提交master分支时报错。这是由于git默认拒绝了push操作，需要.git/config添加如下代码：<br>[receive]<br>      denyCurrentBranch = ignore<br>推荐使用：git –bare init初始化仓库。</p>
+<h6 id="1-4-2-连接服务器"><a href="#1-4-2-连接服务器" class="headerlink" title="1.4.2 连接服务器"></a>1.4.2 连接服务器</h6><p>私有git服务器搭建完成后就可以向连接github一样连接使用了，但是我们的git服务器并没有配置密钥登录，所以每次连接时需要输入密码。<br>使用命令连接：<br>$ git remote add origin ssh://git@192.168.25.156/home/git/first<br>这种形式和刚才使用的形式好像不一样，前面有ssh://前缀，好吧你也可以这样写：<br>$ git remote add origin <a href="mailto:git@192.168.25.156" target="_blank" rel="noopener">git@192.168.25.156</a>:first</p>
+<p>使用TortoiseGit同步的话参考上面的使用方法。</p>
+<h2 id="2、分支管理"><a href="#2、分支管理" class="headerlink" title="2、分支管理"></a>2、分支管理</h2><h5 id="2-1-创建合并分支"><a href="#2-1-创建合并分支" class="headerlink" title="2.1 创建合并分支"></a>2.1 创建合并分支</h5><p>在我们每次的提交，Git都把它们串成一条时间线，这条时间线就是一个分支。截止到目前，只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD指针严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。<br>一开始的时候，master分支是一条线，Git用master指向最新的提交，再用HEAD指向master，就能确定当前分支，以及当前分支的提交点：</p>
+<center><img src="/post_image/chen_02/19.png"></center>
+每次提交，master分支都会向前移动一步，这样，随着你不断提交，master分支的线也越来越长。
+当我们创建新的分支，例如dev时，Git新建了一个指针叫dev，指向master相同的提交，再把HEAD指向dev，就表示当前分支在dev上：
+<center><img src="/post_image/chen_02/20.png"></center>
+你看，Git创建一个分支很快，因为除了增加一个dev指针，改改HEAD的指向，工作区的文件都没有任何变化！
+
+<p>不过，从现在开始，对工作区的修改和提交就是针对dev分支了，比如新提交一次后，dev指针往前移动一步，而master指针不变：</p>
+<center><img src="/post_image/chen_02/21.png"></center>
+假如我们在dev上的工作完成了，就可以把dev合并到master上。Git怎么合并呢？最简单的方法，就是直接把master指向dev的当前提交，就完成了合并：
+<center><img src="/post_image/chen_02/22.png"></center>
+所以Git合并分支也很快！就改改指针，工作区内容也不变！
+
+<p>合并完分支后，甚至可以删除dev分支。删除dev分支就是把dev指针给删掉，删掉后，我们就剩下了一条master分支：</p>
+<center><img src="/post_image/chen_02/23.png"></center>
+
+<h5 id="2-2-使用TortoiseGit实现分支管理"><a href="#2-2-使用TortoiseGit实现分支管理" class="headerlink" title="2.2 使用TortoiseGit实现分支管理"></a>2.2 使用TortoiseGit实现分支管理</h5><p>使用TortoiseGit管理分支就很简单了。</p>
+<h6 id="2-2-1-创建分支"><a href="#2-2-1-创建分支" class="headerlink" title="2.2.1 创建分支"></a>2.2.1 创建分支</h6><p>在本地仓库文件夹中点击右键，然后从菜单中选择“创建分支”：</p>
+<center><img src="/post_image/chen_02/24.png"></center>
+如果想创建完毕后直接切换到新分支可以勾选“切换到新分支”选项或者从菜单中选择“切换/检出”来切换分支：
+<center><img src="/post_image/chen_02/25.png"></center>
+
+<h6 id="2-2-2-合并分支"><a href="#2-2-2-合并分支" class="headerlink" title="2.2.2 合并分支"></a>2.2.2 合并分支</h6><p>分支切换到dev后就可以对工作区的文件进行修改，然后提交到dev分支原理的master分支不受影响。例如我们修改mytest.txt中的内容，然后提交到dev分支。</p>
+<center><img src="/post_image/chen_02/26.png"></center>
+<center><img src="/post_image/chen_02/27.png"></center>
+切换到master分支后还是原理的内容：
+<center><img src="/post_image/chen_02/28.png"></center>
+将dev分支的内容合并到master分支，当前分支为master。从右键菜单中选择“合并”：
+<center><img src="/post_image/chen_02/29.png"></center>
+再查看mytest.txt的内容就已经更新了：
+<center><img src="/post_image/chen_02/30.png"></center>
+
+<h5 id="2-3-解决冲突"><a href="#2-3-解决冲突" class="headerlink" title="2.3 解决冲突"></a>2.3 解决冲突</h5><p>两个分支中编辑的内容都是相互独立互不干扰的，那么如果在两个分支中都对同一个文件进行编辑，然后再合并，就有可能会出现冲突。<br>例如在master分支中对mytest.txt进行编辑：</p>
+<center><img src="/post_image/chen_02/31.png"></center>
+然后提交到版本库。
+<center><img src="/post_image/chen_02/32.png"></center>
+切换到dev分支，对mytest.txt进行编辑：
+<center><img src="/post_image/chen_02/33.png"></center>
+<center><img src="/post_image/chen_02/34.png"></center>
+最后进行分支合并，例如将dev分支合并到master分支。需要先切换到master分支然后进行分支合并。
+<center><img src="/post_image/chen_02/35.png"></center>
+出现版本冲突。
+<center><img src="/post_image/chen_02/36.png"></center>
+冲突需要手动解决。
+<center><img src="/post_image/chen_02/37.png"></center>
+在冲突文件上单机右键选择“解决冲突”菜单项：
+<center><img src="/post_image/chen_02/38.png"></center>
+<center><img src="/post_image/chen_02/39.png"></center>
+把冲突解决完毕的文件提交到版本库就可以了。
+
+<h2 id="3、在IntelliJ-IDEA中使用git"><a href="#3、在IntelliJ-IDEA中使用git" class="headerlink" title="3、在IntelliJ IDEA中使用git"></a>3、在IntelliJ IDEA中使用git</h2><h5 id="3-1-在Idea中配置git"><a href="#3-1-在Idea中配置git" class="headerlink" title="3.1 在Idea中配置git"></a>3.1 在Idea中配置git</h5><p>安装好IntelliJ IDEA后，如果Git安装在默认路径下，那么idea会自动找到git的位置，如果更改了Git的安装位置则需要手动配置下Git的路径。<br>选择File→Settings打开设置窗口，找到Version Control下的git选项：</p>
+<center><img src="/post_image/chen_02/40.png"></center>
+选择git的安装目录后可以点击“Test”按钮测试是否正确配置。
+<center><img src="/post_image/chen_02/41.png"></center>
+
+<h5 id="3-2-将工程添加至git"><a href="#3-2-将工程添加至git" class="headerlink" title="3.2 将工程添加至git"></a>3.2 将工程添加至git</h5><p>1）在idea中创建一个工程，例如创建一个java工程，名称为idea-git-test，如下图所示：</p>
+<center><img src="/post_image/chen_02/42.png"></center>
+2）创建本地仓库
+在菜单中选择“vcs”→Import into Version Control→Create Git Repository...
+<center><img src="/post_image/chen_02/43.png"></center>
+<center><img src="/post_image/chen_02/44.png"></center>
+选择工程所在的上级目录。本例中应该选择idea-projects目录，然后点击“OK”按钮，在工程的上级目录创建本地仓库，那么idea-projects目录就是本地仓库的工作目录，此目录中的工程就可以添加到本地仓库中。也就是可以把idea-git-test工程添加到本地仓库中。
+选择之后在工具栏上就多出了git相关工具按钮:
+<center><img src="/post_image/chen_02/45.png"></center>
+3）将工程添加至本地仓库
+直接点击<center><img src="/post_image/chen_02/46.png"></center>commit按钮，将工程提交至本地仓库。
+<center><img src="/post_image/chen_02/47.png"></center>
+然后点击“commit”按钮，将工程添加至本地仓库。
+
+<p>4）推送到远程<br>在github上创建一个仓库然后将本地仓库推送到远程。<br>在工程上点击右键，选择git→Repository→push，<br>或者在菜单中选择vcs→git→push</p>
+<center><img src="/post_image/chen_02/48.png"></center>
+<center><img src="/post_image/chen_02/49.png"></center>
+点击“Define remote”链接，配置https形式的URL，git形式的无法通过。然后点击OK
+<center><img src="/post_image/chen_02/50.png"></center>
+<center><img src="/post_image/chen_02/51.png"></center>
+点击“push”按钮就讲本地仓库推送到远程，如果是第一次配置推送需要输入github的用户名和密码。
+
+<h5 id="3-3-从远程仓库克隆"><a href="#3-3-从远程仓库克隆" class="headerlink" title="3.3 从远程仓库克隆"></a>3.3 从远程仓库克隆</h5><p>关闭工程后，在idea的欢迎页上有“Check out from version control”下拉框，选择git</p>
+<center><img src="/post_image/chen_02/52.png"></center>
+<center><img src="/post_image/chen_02/53.png"></center>
+此处仍然推荐使用htts形式的url，点击“test”按钮后显示连接成功。
+点击OK按钮后根据提示将远程仓库克隆下来，然后倒入到idea中。
+
+<h5 id="3-4-从服务端拉取代码"><a href="#3-4-从服务端拉取代码" class="headerlink" title="3.4 从服务端拉取代码"></a>3.4 从服务端拉取代码</h5><p>如果需要从服务端同步代码可以使用工具条中的“update”按钮</p>
+<center><img src="/post_image/chen_02/54.png"></center>
+      
+    </div>
+	
+	<div>
+	  
+		<div>
+    
+        <div style="width:100%;text-align:center;color: #ccc;font-size:22px;">------&ensp;&ensp;本文到此结束<span class="post-meta-divider"></span><i class="fa fa-paw"></i><span class="post-meta-divider"></span>感谢您的阅读&ensp;&ensp;------</div>
+    
+</div>
+	  
+	</div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>请“Chen77”喝杯咖啡</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="Chen77 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.png" alt="Chen77 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Chen77
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://mechenjuanjuan.github.io/2019/10/14/chen_02/" title="Git使用详情（二）">https://mechenjuanjuan.github.io/2019/10/14/chen_02/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags" id="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          
+            <a href="/tags/Svn/" rel="tag"><i class="fa fa-tag"></i> Svn</a>
+          
+            <a href="/tags/Idea/" rel="tag"><i class="fa fa-tag"></i> Idea</a>
+          
+        </div>
+		<script type="text/javascript">
+			var tagsall=document.getElementsByClassName("post-tags")
+			for (var i = tagsall.length - 1; i >= 0; i--){
+				var tags=tagsall[i].getElementsByTagName("a");
+				for (var j = tags.length - 1; j >= 0; j--) {
+					var r=Math.floor(Math.random()*75+130);
+					var g=Math.floor(Math.random()*75+100);
+					var b=Math.floor(Math.random()*75+80);
+					tags[j].style.background = "rgb("+r+","+g+","+b+")";
+				}
+			}                        
+		</script>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/10/chen_01/" rel="next" title="Git使用详情（一）">
+                <i class="fa fa-chevron-left"></i> Git使用详情（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+	
+	
+	
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NjEwNy8yMjYxOA==">
+		   <script type="text/javascript">
+			   (function(d, s) {
+				   var j, e = d.getElementsByTagName(s)[0];
+				   if (typeof LivereTower === 'function') { return; }
+				   j = d.createElement(s);
+				   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+				   j.async = true;
+				   e.parentNode.insertBefore(j, e);
+			   })(document, 'script');
+			</script>
+	  </div>
+    </div>
+
+  
+
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+		  
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/header.jpg" alt="Chen77">
+            
+              <p class="site-author-name" itemprop="name">Chen77</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+			
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/mechenjuanjuan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:chen77o@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/BlowMoons" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-btc"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://music.163.com/#/user/home?id=1557729017" target="_blank" title="CloudMusic">
+                      
+                        <i class="fa fa-fw fa-music"></i>CloudMusic</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="asdfv" target="_blank">asdfv</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.yleao.com/2018/0902/hexo上的aplayer应用.html" title="Y's BLOG" target="_blank">Y's BLOG</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.carrotchou.blog/" title="胡萝卜周" target="_blank">胡萝卜周</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.chinapyg.com" title="飘云阁" target="_blank">飘云阁</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+		  
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、远程仓库"><span class="nav-number">1.</span> <span class="nav-text">1、远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-添加远程库"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.1 添加远程库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-1-在github上创建仓库"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">1.1.1 在github上创建仓库</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-2-ssh协议"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">1.1.2 ssh协议</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1-2-1-什么是ssh"><span class="nav-number">1.0.0.3.1.</span> <span class="nav-text">1.1.2.1 什么是ssh?</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1-2-2-基于密匙的安全验证"><span class="nav-number">1.0.0.3.2.</span> <span class="nav-text">1.1.2.2 基于密匙的安全验证</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1-2-3-ssh密钥生成"><span class="nav-number">1.0.0.3.3.</span> <span class="nav-text">1.1.2.3 ssh密钥生成</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1-2-4-ssh密钥配置"><span class="nav-number">1.0.0.3.4.</span> <span class="nav-text">1.1.2.4 ssh密钥配置</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-3-同步到远程仓库"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">1.1.3 同步到远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1-3-1-使用git-bash"><span class="nav-number">1.0.0.4.1.</span> <span class="nav-text">1.1.3.1 使用git bash</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-1-3-2-使用TortoiseGit同步"><span class="nav-number">1.0.0.4.2.</span> <span class="nav-text">1.1.3.2 使用TortoiseGit同步</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-从远程仓库克隆"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">1.2 从远程仓库克隆</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-2-1-使用git-bash："><span class="nav-number">1.0.0.5.1.</span> <span class="nav-text">1.2.1 使用git bash：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-2-2-使用TortoiseGit："><span class="nav-number">1.0.0.5.2.</span> <span class="nav-text">1.2.2 使用TortoiseGit：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-3-从远程仓库取代码"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">1.3 从远程仓库取代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-4-搭建私有Git服务器"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">1.4 搭建私有Git服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-4-1-服务器搭建"><span class="nav-number">1.0.0.7.1.</span> <span class="nav-text">1.4.1 服务器搭建</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#1-4-2-连接服务器"><span class="nav-number">1.0.0.7.2.</span> <span class="nav-text">1.4.2 连接服务器</span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#2、分支管理"><span class="nav-number">2.</span> <span class="nav-text">2、分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-创建合并分支"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">2.1 创建合并分支</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-使用TortoiseGit实现分支管理"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">2.2 使用TortoiseGit实现分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#2-2-1-创建分支"><span class="nav-number">2.0.0.2.1.</span> <span class="nav-text">2.2.1 创建分支</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-2-2-合并分支"><span class="nav-number">2.0.0.2.2.</span> <span class="nav-text">2.2.2 合并分支</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-解决冲突"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">2.3 解决冲突</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、在IntelliJ-IDEA中使用git"><span class="nav-number">3.</span> <span class="nav-text">3、在IntelliJ IDEA中使用git</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-在Idea中配置git"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">3.1 在Idea中配置git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-将工程添加至git"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">3.2 将工程添加至git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-从远程仓库克隆"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">3.3 从远程仓库克隆</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-从服务端拉取代码"><span class="nav-number">3.0.0.4.</span> <span class="nav-text">3.4 从服务端拉取代码</span></a></li></ol></li></div>
+            
+			
+          </div>
+        </section>
+      <!--/noindex-->
+      
+      
+	  
+	  
+	  
+		<script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+		<script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+		<div class="widget-wrap">
+			
+			<div id="myCanvasContainer" class="widget tagcloud">
+				<canvas width="250" height="250" id="resCanvas" style="margin-left: -10px;">
+					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Coding/">Coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hello/">Hello</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea/">Idea</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Next/">Next</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Svn/">Svn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无题/">无题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/码云/">码云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/茉莉雨/">茉莉雨</a><span class="tag-list-count">1</span></li></ul>
+				</canvas>
+			</div>
+		</div>
+	
+	
+	 <div class="card-announcement">
+		<div class="card-content">
+			<div class="item_headline">
+			<i class="fa fa-bullhorn card-announcement-animation" aria-hidden="true"></i>
+			<span>公告</span>
+		</div>
+			<div class="announcement_content">
+			谢谢你这么帅，这么漂亮还来看我的博客，如果喜欢的话记得收藏哦
+			</div>
+		</div>
+	</div>
+	
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+	
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heartbeat"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chen77</span>
+
+  
+</div>
+
+
+
+<span id="sitetime" style="color:#ffa631"></span>
+<script language="javascript">
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+		var t1 = Date.UTC(2017,12,23,00,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 本站已存活："+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+	siteTime();
+</script>
+<br>
+
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+-->
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<span id="busuanzi_container_site_uv">访问人数<span class="post-meta-divider"></span><span id="busuanzi_value_site_uv"></span></span>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<span id="busuanzi_container_site_pv">总访问量<span class="post-meta-divider"></span><span id="busuanzi_value_site_pv"></span></span>
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("j77EqYs44u5uxXeXQOu4hXQ9-gzGzoHsz", "OvWe4kJN8C2ndcXttjCScQ1N");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+	<div id="shangxia2">
+		<span id="gotop1">
+			<img src="/top/rocked.png" alt="返回顶部小火箭">
+		</span>
+	</div>
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+</script>
+
+<!--看板娘一-->
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+	loadlive2d("live2d", "/live2d/model/kesshouban_v2/model.json");
+</script>
+
+</body>
+</html>
+<!--点击火花-->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/src/fireworks.js"></script>
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/src/funnyTitle.js"></script>
+<!--播放器-->
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+<!--回到顶部-->
+<script type="text/javascript" src="/top/topJs.js"></script>
+<script src="https://cdn.bootcss.com/gsap/1.19.0/TweenMax.min.js"></script>
+<script src="https://cdn.bootcss.com/gsap/1.19.0/plugins/ScrollToPlugin.min.js"></script> 
