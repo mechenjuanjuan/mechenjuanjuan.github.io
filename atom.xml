@@ -5,9 +5,9 @@
   <subtitle>愿喜欢跟合适撞个满怀</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://mechenjuanjuan.github.io/"/>
+  <link href="http://mechenjuanjuan.github.io/"/>
   <updated>2019-10-14T09:59:59.136Z</updated>
-  <id>https://mechenjuanjuan.github.io/</id>
+  <id>http://mechenjuanjuan.github.io/</id>
   
   <author>
     <name>Chen77</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Git使用详情（二）</title>
-    <link href="https://mechenjuanjuan.github.io/2019/10/14/chen_02/"/>
-    <id>https://mechenjuanjuan.github.io/2019/10/14/chen_02/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/10/14/chen_02/"/>
+    <id>http://mechenjuanjuan.github.io/2019/10/14/chen_02/</id>
     <published>2019-10-14T03:58:41.514Z</published>
     <updated>2019-10-14T09:59:59.136Z</updated>
     
@@ -33,21 +33,21 @@
     
     </summary>
     
-      <category term="Git" scheme="https://mechenjuanjuan.github.io/categories/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/categories/Git/"/>
     
     
-      <category term="Git" scheme="https://mechenjuanjuan.github.io/tags/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/tags/Git/"/>
     
-      <category term="Svn" scheme="https://mechenjuanjuan.github.io/tags/Svn/"/>
+      <category term="Svn" scheme="http://mechenjuanjuan.github.io/tags/Svn/"/>
     
-      <category term="Idea" scheme="https://mechenjuanjuan.github.io/tags/Idea/"/>
+      <category term="Idea" scheme="http://mechenjuanjuan.github.io/tags/Idea/"/>
     
   </entry>
   
   <entry>
     <title>Git使用详情（一）</title>
-    <link href="https://mechenjuanjuan.github.io/2019/10/10/chen_01/"/>
-    <id>https://mechenjuanjuan.github.io/2019/10/10/chen_01/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/10/10/chen_01/"/>
+    <id>http://mechenjuanjuan.github.io/2019/10/10/chen_01/</id>
     <published>2019-10-10T07:00:22.815Z</published>
     <updated>2019-10-14T03:58:25.825Z</updated>
     
@@ -60,19 +60,19 @@
     
     </summary>
     
-      <category term="Git" scheme="https://mechenjuanjuan.github.io/categories/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/categories/Git/"/>
     
     
-      <category term="Git" scheme="https://mechenjuanjuan.github.io/tags/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/tags/Git/"/>
     
-      <category term="Svn" scheme="https://mechenjuanjuan.github.io/tags/Svn/"/>
+      <category term="Svn" scheme="http://mechenjuanjuan.github.io/tags/Svn/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 部署到码云</title>
-    <link href="https://mechenjuanjuan.github.io/2019/09/09/chen_two/"/>
-    <id>https://mechenjuanjuan.github.io/2019/09/09/chen_two/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/09/09/chen_two/"/>
+    <id>http://mechenjuanjuan.github.io/2019/09/09/chen_two/</id>
     <published>2019-09-09T02:01:25.267Z</published>
     <updated>2019-09-10T07:16:33.139Z</updated>
     
@@ -88,21 +88,21 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://mechenjuanjuan.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://mechenjuanjuan.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://mechenjuanjuan.github.io/tags/Next/"/>
+      <category term="Next" scheme="http://mechenjuanjuan.github.io/tags/Next/"/>
     
-      <category term="码云" scheme="https://mechenjuanjuan.github.io/tags/%E7%A0%81%E4%BA%91/"/>
+      <category term="码云" scheme="http://mechenjuanjuan.github.io/tags/%E7%A0%81%E4%BA%91/"/>
     
   </entry>
   
   <entry>
     <title>Hexo部署到Coding</title>
-    <link href="https://mechenjuanjuan.github.io/2019/09/04/chen_one/"/>
-    <id>https://mechenjuanjuan.github.io/2019/09/04/chen_one/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/09/04/chen_one/"/>
+    <id>http://mechenjuanjuan.github.io/2019/09/04/chen_one/</id>
     <published>2019-09-04T08:18:04.004Z</published>
     <updated>2019-09-12T10:08:16.569Z</updated>
     
@@ -125,21 +125,21 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://mechenjuanjuan.github.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/categories/Hexo/"/>
     
     
-      <category term="Coding" scheme="https://mechenjuanjuan.github.io/tags/Coding/"/>
+      <category term="Coding" scheme="http://mechenjuanjuan.github.io/tags/Coding/"/>
     
-      <category term="Hexo" scheme="https://mechenjuanjuan.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://mechenjuanjuan.github.io/tags/Next/"/>
+      <category term="Next" scheme="http://mechenjuanjuan.github.io/tags/Next/"/>
     
   </entry>
   
   <entry>
     <title>茉莉雨</title>
-    <link href="https://mechenjuanjuan.github.io/2019/08/16/Raindrops/"/>
-    <id>https://mechenjuanjuan.github.io/2019/08/16/Raindrops/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/08/16/Raindrops/"/>
+    <id>http://mechenjuanjuan.github.io/2019/08/16/Raindrops/</id>
     <published>2019-08-16T07:35:51.164Z</published>
     <updated>2019-09-12T10:10:39.644Z</updated>
     
@@ -158,19 +158,19 @@
     
     </summary>
     
-      <category term="Other" scheme="https://mechenjuanjuan.github.io/categories/Other/"/>
+      <category term="Other" scheme="http://mechenjuanjuan.github.io/categories/Other/"/>
     
     
-      <category term="无题" scheme="https://mechenjuanjuan.github.io/tags/%E6%97%A0%E9%A2%98/"/>
+      <category term="无题" scheme="http://mechenjuanjuan.github.io/tags/%E6%97%A0%E9%A2%98/"/>
     
-      <category term="茉莉雨" scheme="https://mechenjuanjuan.github.io/tags/%E8%8C%89%E8%8E%89%E9%9B%A8/"/>
+      <category term="茉莉雨" scheme="http://mechenjuanjuan.github.io/tags/%E8%8C%89%E8%8E%89%E9%9B%A8/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://mechenjuanjuan.github.io/2019/08/15/hello-world/"/>
-    <id>https://mechenjuanjuan.github.io/2019/08/15/hello-world/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/08/15/hello-world/"/>
+    <id>http://mechenjuanjuan.github.io/2019/08/15/hello-world/</id>
     <published>2019-08-15T03:00:16.843Z</published>
     <updated>2019-09-09T09:13:02.697Z</updated>
     
@@ -188,10 +188,10 @@
     
     </summary>
     
-      <category term="Other" scheme="https://mechenjuanjuan.github.io/categories/Other/"/>
+      <category term="Other" scheme="http://mechenjuanjuan.github.io/categories/Other/"/>
     
     
-      <category term="Hello" scheme="https://mechenjuanjuan.github.io/tags/Hello/"/>
+      <category term="Hello" scheme="http://mechenjuanjuan.github.io/tags/Hello/"/>
     
   </entry>
   
