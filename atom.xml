@@ -3,11 +3,11 @@
   <title>Chen77&#39;s Blog</title>
   
   <subtitle>愿喜欢跟合适撞个满怀</subtitle>
-  <link href="/chen77o/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://chen77o.gitee.io/"/>
-  <updated>2019-10-14T09:59:59.136Z</updated>
-  <id>https://chen77o.gitee.io/</id>
+  <link href="http://mechenjuanjuan.github.io/"/>
+  <updated>2019-11-15T10:24:23.939Z</updated>
+  <id>http://mechenjuanjuan.github.io/</id>
   
   <author>
     <name>Chen77</name>
@@ -17,9 +17,100 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于Maven项目下使用Mybatis时，找不到mapper映射文件的问题</title>
+    <link href="http://mechenjuanjuan.github.io/2019/11/15/chen_05/"/>
+    <id>http://mechenjuanjuan.github.io/2019/11/15/chen_05/</id>
+    <published>2019-11-15T09:44:01.815Z</published>
+    <updated>2019-11-15T10:24:23.939Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>一般maven项目，dao的mapper映射文件会映射在resources下，创建同包同名的xml，这样是没问题的<center><img src="/post_image/chen_05/1.png"></center><a id="more"></a></li></ul><ul><li><p>如下图：如果想在这个地方放xml，就找不到mapper映射文件了</p></li><li><p>可以查看项目下的\target\classes的映射文件，这我就不展示了</p><center><img src="/post_image/chen_05/2.png"></center></li><li><p>解决方法</p></li><li><p>在pom.xml的build里添加</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugins&gt;</span><br><span class="line"> &lt;!-- 资源文件拷贝插件 --&gt;</span><br><span class="line">   &lt;plugin&gt;</span><br><span class="line">     &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">     &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;</span><br><span class="line">     &lt;version&gt;2.7&lt;/version&gt;</span><br><span class="line">     &lt;configuration&gt;</span><br><span class="line">       &lt;encoding&gt;UTF-8&lt;/encoding&gt;</span><br><span class="line">     &lt;/configuration&gt;</span><br><span class="line">   &lt;/plugin&gt;</span><br><span class="line"> &lt;/plugins&gt;</span><br><span class="line">   &lt;!-- 如果不添加此节点，mybatis的mapper.xml文件都会被漏掉。 --&gt;</span><br><span class="line">   &lt;resources&gt;</span><br><span class="line">     &lt;resource&gt;</span><br><span class="line">       &lt;directory&gt;src/main/java&lt;/directory&gt;</span><br><span class="line">       &lt;includes&gt;</span><br><span class="line">         &lt;include&gt;**/*.properties&lt;/include&gt;</span><br><span class="line">         &lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">       &lt;/includes&gt;</span><br><span class="line">       &lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">     &lt;/resource&gt;</span><br><span class="line">   &lt;/resources&gt;</span><br></pre></td></tr></table></figure></li><li><p>注意：</p></li><li><p>刷新一下maven，然后clean,install一下，启动项目</p></li><li><p>我启动项目报错了，不知道你们会不会，报错显示找不到spring_mvc.xml</p></li><li><p>我想大概是之前默认映射是在resources目录下，修改映射路径过滤之后就找不到了</p></li><li><p>然后我有添加了一段映射路径，就不报错了</p></li><li><p>代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">   &lt;plugins&gt;</span><br><span class="line">&lt;!-- 资源文件拷贝插件 --&gt;</span><br><span class="line">      &lt;plugin&gt;</span><br><span class="line">        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;2.7&lt;/version&gt;</span><br><span class="line">        &lt;configuration&gt;</span><br><span class="line">          &lt;encoding&gt;UTF-8&lt;/encoding&gt;</span><br><span class="line">        &lt;/configuration&gt;</span><br><span class="line">      &lt;/plugin&gt;</span><br><span class="line">     &lt;/plugins&gt;</span><br><span class="line">      &lt;!-- 如果不添加此节点，mybatis的mapper.xml文件都会被漏掉。 --&gt;</span><br><span class="line">      &lt;resources&gt;</span><br><span class="line">        &lt;resource&gt;</span><br><span class="line">          &lt;directory&gt;src/main/java&lt;/directory&gt;</span><br><span class="line">          &lt;includes&gt;</span><br><span class="line">            &lt;include&gt;**/*.properties&lt;/include&gt;</span><br><span class="line">            &lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">          &lt;/includes&gt;</span><br><span class="line">          &lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">        &lt;/resource&gt;</span><br><span class="line">        &lt;resource&gt;</span><br><span class="line">          &lt;directory&gt;src/main/resources&lt;/directory&gt;</span><br><span class="line">          &lt;includes&gt;</span><br><span class="line">            &lt;include&gt;**/*.properties&lt;/include&gt;</span><br><span class="line">            &lt;include&gt;**/*.xml&lt;/include&gt;</span><br><span class="line">          &lt;/includes&gt;</span><br><span class="line">          &lt;filtering&gt;false&lt;/filtering&gt;</span><br><span class="line">        &lt;/resource&gt;</span><br><span class="line">      &lt;/resources&gt;</span><br><span class="line">  &lt;/build&gt;</span><br></pre></td></tr></table></figure></li><li><p>以上是我自己的理解，当然是亲自测试过的</p></li><li><p>希望对你们有帮助</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;一般maven项目，dao的mapper映射文件会映射在resources下，创建同包同名的xml，这样是没问题的&lt;center&gt;&lt;img src=&quot;/post_image/chen_05/1.png&quot;&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="Idea" scheme="http://mechenjuanjuan.github.io/categories/Idea/"/>
+    
+      <category term="Maven" scheme="http://mechenjuanjuan.github.io/categories/Idea/Maven/"/>
+    
+      <category term="Mybatis" scheme="http://mechenjuanjuan.github.io/categories/Idea/Maven/Mybatis/"/>
+    
+      <category term="mapper" scheme="http://mechenjuanjuan.github.io/categories/Idea/Maven/Mybatis/mapper/"/>
+    
+    
+      <category term="Idea" scheme="http://mechenjuanjuan.github.io/tags/Idea/"/>
+    
+      <category term="Maven" scheme="http://mechenjuanjuan.github.io/tags/Maven/"/>
+    
+      <category term="Mybatis" scheme="http://mechenjuanjuan.github.io/tags/Mybatis/"/>
+    
+      <category term="mapper" scheme="http://mechenjuanjuan.github.io/tags/mapper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Idea创建Maven项目</title>
+    <link href="http://mechenjuanjuan.github.io/2019/11/15/chen_04/"/>
+    <id>http://mechenjuanjuan.github.io/2019/11/15/chen_04/</id>
+    <published>2019-11-15T08:44:01.545Z</published>
+    <updated>2019-11-15T09:52:31.727Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、Idea创建"><a href="#1、Idea创建" class="headerlink" title="1、Idea创建"></a>1、Idea创建</h2><center><img src="/post_image/chen_04/1.png"></center><a id="more"></a><ul><li><p>填写组名、项目名</p><center><img src="/post_image/chen_04/2.png"></center></li><li><p>选择你的maven和本地仓库</p></li><li><p>注：maven环境，配置，本地仓库就不说了</p><center><img src="/post_image/chen_04/3.png"></center></li><li><p>解决构建maven项目过慢</p><center><img src="/post_image/chen_04/4.png"></center></li><li><p>选择项目地址</p><center><img src="/post_image/chen_04/5.png"></center></li><li><p>看到如下图的信息和目录结构说明构建成功</p><center><img src="/post_image/chen_04/6.png"></center></li><li><p>在src/main下创建java和resources</p><center><img src="/post_image/chen_04/7.png"></center><center><img src="/post_image/chen_04/8.png"></center></li><li><p>在src下创建test文件，再创建java和resources用于测试</p><center><img src="/post_image/chen_04/9.png"></center><center><img src="/post_image/chen_04/10.png"></center></li><li><p>目录结构创建好了，图标颜色样式如下图</p><center><img src="/post_image/chen_04/11.png"></center></li></ul><h2 id="1、maven相关设置"><a href="#1、maven相关设置" class="headerlink" title="1、maven相关设置"></a>1、maven相关设置</h2><ul><li><p>注意：如果maven项目控制台输出的是乱码，可以在这个地方设置，解决乱码</p></li><li><p>-Dfile.encoding=GB2312 -Darchetypecatalog=internal</p><center><img src="/post_image/chen_04/12.png"></center></li><li><p>maven仓库设置，和仓库更新</p><center><img src="/post_image/chen_04/13.png"></center><center><img src="/post_image/chen_04/14.png"></center></li></ul><h2 id="1、maven项目启动"><a href="#1、maven项目启动" class="headerlink" title="1、maven项目启动"></a>1、maven项目启动</h2><p>在pom.xml配置tomcat7,JDK插件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line">        &lt;!--maven插件--&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line">            &lt;!--jdk编译插件--&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;source&gt;1.8&lt;/source&gt;</span><br><span class="line">                    &lt;target&gt;1.8&lt;/target&gt;</span><br><span class="line">                    &lt;encoding&gt;utf-8&lt;/encoding&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line">            &lt;!--tomcat插件--&gt;</span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;</span><br><span class="line">                &lt;!-- tomcat7的插件， 不同tomcat版本这个也不一样 --&gt;</span><br><span class="line">                &lt;artifactId&gt;tomcat7-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;version&gt;2.1&lt;/version&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;!-- 通过maven tomcat7:run运行项目时，访问项目的端口号 --&gt;</span><br><span class="line">                    &lt;port&gt;8080&lt;/port&gt;</span><br><span class="line">                    &lt;!-- 项目访问路径  本例：localhost:9090,  如果配置的aa， 则访问路径为localhost:9090/aa--&gt;</span><br><span class="line">                    &lt;path&gt;/&lt;/path&gt;</span><br><span class="line">                &lt;/configuration&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br></pre></td></tr></table></figure><ul><li><p>出现如下图，说明配置成功（不成功刷新一下maven）</p></li><li><p>可以直接点击tomcat7：run运行</p><center><img src="/post_image/chen_04/15.png"></center></li><li><p>为了启动方便，可以再配置一下</p><center><img src="/post_image/chen_04/16.png"></center><center><img src="/post_image/chen_04/17.png"></center><center><img src="/post_image/chen_04/18.png"></center></li><li><p>清除一下，安装部署一下</p><center><img src="/post_image/chen_04/19.png"></center><center><img src="/post_image/chen_04/20.png"></center></li><li><p>启动，下面会出现访问地址，点击访问</p></li><li><p>注：访问地址可以在pom.xml的插件里修改</p><center><img src="/post_image/chen_04/21.png"></center><center><img src="/post_image/chen_04/22.png"></center></li><li><p>修改后台代码，配置文件等，尽量clean、install一下再启动</p></li><li><p>未完待续…</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1、Idea创建&quot;&gt;&lt;a href=&quot;#1、Idea创建&quot; class=&quot;headerlink&quot; title=&quot;1、Idea创建&quot;&gt;&lt;/a&gt;1、Idea创建&lt;/h2&gt;&lt;center&gt;&lt;img src=&quot;/post_image/chen_04/1.png&quot;&gt;&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="Idea" scheme="http://mechenjuanjuan.github.io/categories/Idea/"/>
+    
+      <category term="Maven" scheme="http://mechenjuanjuan.github.io/categories/Idea/Maven/"/>
+    
+    
+      <category term="Idea" scheme="http://mechenjuanjuan.github.io/tags/Idea/"/>
+    
+      <category term="Maven" scheme="http://mechenjuanjuan.github.io/tags/Maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java调用Python传list(多个list，不同类型list)参数</title>
+    <link href="http://mechenjuanjuan.github.io/2019/10/30/chen_03/"/>
+    <id>http://mechenjuanjuan.github.io/2019/10/30/chen_03/</id>
+    <published>2019-10-30T09:17:37.206Z</published>
+    <updated>2019-11-15T08:47:16.899Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1、通过Runtime进行调用"><a href="#1、通过Runtime进行调用" class="headerlink" title="1、通过Runtime进行调用"></a>1、通过Runtime进行调用</h2><h4 id="1-1-传一个字符串"><a href="#1-1-传一个字符串" class="headerlink" title="1.1 传一个字符串"></a>1.1 传一个字符串</h4><ul><li>java文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class CoalType &#123;</span><br><span class="line">    public static String coalType_list(String data) &#123;</span><br><span class="line">        String arr = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            String[] arg = new String[] &#123; &quot;E:\\Program Files\\Python36\\python.exe&quot;, &quot;E:\\Test\\test\\qiting.py&quot;,data&#125;;</span><br><span class="line">            Process proc = Runtime.getRuntime().exec(arg);// 执行py文件</span><br><span class="line"></span><br><span class="line">            BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));</span><br><span class="line">            String line = null;</span><br><span class="line">            while ((line = in.readLine()) != null) &#123;</span><br><span class="line">                arr = line;</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">            proc.waitFor();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String data = &quot;Lisa&quot;;</span><br><span class="line">        String test_name = CoalType.coalType_list(data);</span><br><span class="line">        System.out.println(test_name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><a id="more"></a><ul><li>py文件</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import sys as ss</span><br><span class="line">        </span><br><span class="line">def main():</span><br><span class="line">print (ss.argv[1])</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure><ul><li>结果</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Lisa</span><br></pre></td></tr></table></figure><p>如下图：</p><center><img src="/post_image/chen_03/1.jpg"></center><p>&ensp;&ensp;&ensp;在Java中通过Runtime调用Python程序与直接执行Python程序的效果是一样的，可以在Python中读取传递的参数，也可以在Java中读取到Python的执行结果。<br>&ensp;&ensp;&ensp;如上图所示，这样是获取不到数据的，需要输出语句print，StartStopOpt方法在java中也调用不了，需要在.py文件里初始化调用，然后输出，java才能获取到数据<br>&ensp;&ensp;&ensp;需要注意的是，不能在Python中通过return语句返回结果，只能将返回值写入到标准输出流中，然后在Java中通过标准输入流读取Python的输出值。</p><h4 id="1-1-传一个list集合"><a href="#1-1-传一个list集合" class="headerlink" title="1.1 传一个list集合"></a>1.1 传一个list集合</h4><ul><li><p>java文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">public class Mogun &#123;</span><br><span class="line">    public static String coalType_list(List&lt;Double&gt; list_one) &#123;</span><br><span class="line">        String arr = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            String sysPython = &quot;E:\\Program Files\\Python36\\python.exe &quot;;</span><br><span class="line">            String filePython = &quot;E:\\Test\\test\\qiting.py &quot;;</span><br><span class="line">            Process proc = Runtime.getRuntime().exec(sysPython + filePython + list_one);// 执行py文件</span><br><span class="line">            BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));</span><br><span class="line">            String line = null;</span><br><span class="line">            while ((line = in.readLine()) != null) &#123;</span><br><span class="line">                arr = line;</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">            proc.waitFor();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        List&lt;Double&gt; list_one = new ArrayList&lt;&gt;();</span><br><span class="line">        list_one.add(1.222);</span><br><span class="line">        list_one.add(2.888);</span><br><span class="line">        list_one.add(3.888);</span><br><span class="line">        list_one.add(4.888);</span><br><span class="line">        list_one.add(5.888);</span><br><span class="line">        String flag = Mogun.coalType_list(list_one);</span><br><span class="line">        System.out.println(flag);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>py文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import sys as ss</span><br><span class="line"></span><br><span class="line">def StartStopOpt(list_str,list_float):</span><br><span class="line">............</span><br><span class="line">...........</span><br><span class="line">return result</span><br><span class="line">        </span><br><span class="line">def main():</span><br><span class="line">list_str = []</span><br><span class="line">    list_float = []</span><br><span class="line">    for i in range(1, len(ss.argv)):</span><br><span class="line">        list_str.append(ss.argv[i].replace(&quot;,&quot;, &quot;&quot;))</span><br><span class="line">    list_str[0] = list_str[0].replace(&quot;[&quot;, &quot;&quot;)</span><br><span class="line">    list_str[len(ss.argv) - 2] = list_str[len(ss.argv) - 2].replace(&quot;]&quot;, &quot;&quot;)</span><br><span class="line">    # 字符串数组</span><br><span class="line">    # print(list_str)</span><br><span class="line">    # 浮点数数组</span><br><span class="line">    list_int = list(map(float, list_str))</span><br><span class="line">    # print(list_int)</span><br><span class="line"># 调用函数传参得到返回值输出</span><br><span class="line">test = StartStopOpt(list_str,list_float)</span><br><span class="line">print(test)</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></li><li><p>结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">字符串数组</span><br><span class="line">[&apos;1.222&apos;, &apos;2.888&apos;, &apos;3.888&apos;, &apos;4.888&apos;, &apos;5.888&apos;]</span><br><span class="line">浮点数数组</span><br><span class="line">[1.222, 2.888, 3.888, 4.888, 5.888]</span><br><span class="line">调用函数传参得到返回值输出</span><br><span class="line">...省略</span><br></pre></td></tr></table></figure></li></ul><p>注意：一定要记得空格，不然会报错</p><center><img src="/post_image/chen_03/2.jpg"></center><center><img src="/post_image/chen_03/3.jpg"></center><h4 id="1-1-传两个list集合"><a href="#1-1-传两个list集合" class="headerlink" title="1.1 传两个list集合"></a>1.1 传两个list集合</h4><ul><li><p>java文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">public class Mogun &#123;</span><br><span class="line">    public static String coalType_list(List&lt;Double&gt; list_one, List&lt;Integer&gt; list_two) &#123;</span><br><span class="line">        String arr = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            String sysPython = &quot;E:\\Program Files\\Python36\\python.exe &quot;;</span><br><span class="line">            String filePython = &quot;E:\\Test\\test\\qiting.py &quot;;</span><br><span class="line">            Process proc = Runtime.getRuntime().exec(sysPython + filePython + list_one + list_two);// 执行py文件</span><br><span class="line">            BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));</span><br><span class="line">            String line = null;</span><br><span class="line">            while ((line = in.readLine()) != null) &#123;</span><br><span class="line">                arr = line;</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">            proc.waitFor();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) throws Exception &#123;</span><br><span class="line">        List&lt;Double&gt; list_one = new ArrayList&lt;&gt;();</span><br><span class="line">        list_one.add(1.222);</span><br><span class="line">        list_one.add(2.888);</span><br><span class="line">        list_one.add(3.888);</span><br><span class="line">        list_one.add(4.888);</span><br><span class="line">        list_one.add(5.888);</span><br><span class="line">        List&lt;Integer&gt; list_two = new ArrayList&lt;&gt;();</span><br><span class="line">        list_two.add(1);</span><br><span class="line">        list_two.add(2);</span><br><span class="line">        list_two.add(3);</span><br><span class="line">        list_two.add(4);</span><br><span class="line">        list_two.add(5);</span><br><span class="line">        String flag = Mogun.coalType_list(list_one, list_two);</span><br><span class="line">        System.out.println(flag);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>py文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import sys as ss</span><br><span class="line"></span><br><span class="line">def StartStopOpt(turn,current):</span><br><span class="line">............</span><br><span class="line">...........</span><br><span class="line">return result</span><br><span class="line">        </span><br><span class="line">def main():</span><br><span class="line">#初始数据</span><br><span class="line">    # print (ss.argv[1:])</span><br><span class="line">    list_str = []</span><br><span class="line">    turn = []</span><br><span class="line">    current = []</span><br><span class="line">    for i in range(1, len(ss.argv)):</span><br><span class="line">        list_str.append(ss.argv[i].replace(&quot;,&quot;, &quot;&quot;))</span><br><span class="line">    list_str[0] = list_str[0].replace(&quot;[&quot;, &quot;&quot;)</span><br><span class="line">    list_str[len(ss.argv) - 2] = list_str[len(ss.argv) - 2].replace(&quot;]&quot;, &quot;&quot;)</span><br><span class="line">    str = &apos;,&apos;.join(list_str)</span><br><span class="line">    arr = str.split(&quot;][&quot;)</span><br><span class="line">    turn = arr[0].split(&quot;,&quot;)</span><br><span class="line">    turn = list(map(float, turn))#转换成浮点数数组</span><br><span class="line">    #输出第一个数组</span><br><span class="line">    # print (turn)</span><br><span class="line">    current = arr[1].split(&quot;,&quot;)</span><br><span class="line">    current = list(map(int, current))#转换成整数数组</span><br><span class="line">    #输出第二个数组</span><br><span class="line">    # print (current)</span><br><span class="line"></span><br><span class="line"># 调用函数传参得到返回值输出</span><br><span class="line">test = StartStopOpt(turn,current)</span><br><span class="line">print(test)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></li><li><p>结果</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">初始数据</span><br><span class="line">[&apos;[1.222,&apos;, &apos;2.888,&apos;, &apos;3.888,&apos;, &apos;4.888,&apos;, &apos;5.888][1,&apos;, &apos;2,&apos;, &apos;3,&apos;, &apos;4,&apos;, &apos;5]&apos;]</span><br><span class="line">输出第一个数组</span><br><span class="line">[1, 2, 3, 4, 5]</span><br><span class="line">输出第二个数组</span><br><span class="line">[1.222, 2.888, 3.888, 4.888, 5.888]</span><br><span class="line">调用函数传参得到返回值输出</span><br><span class="line">...省略</span><br></pre></td></tr></table></figure></li></ul><p>问题：数组的长度也是有限制的，我试着添加了8000元素的double类型的集合，就报错了<br>解决：<a href="https://www.cnblogs.com/downmoon/archive/2012/11/18/2775587.html" target="_blank" rel="noopener">https://www.cnblogs.com/downmoon/archive/2012/11/18/2775587.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1、通过Runtime进行调用&quot;&gt;&lt;a href=&quot;#1、通过Runtime进行调用&quot; class=&quot;headerlink&quot; title=&quot;1、通过Runtime进行调用&quot;&gt;&lt;/a&gt;1、通过Runtime进行调用&lt;/h2&gt;&lt;h4 id=&quot;1-1-传一个字符串&quot;&gt;&lt;a href=&quot;#1-1-传一个字符串&quot; class=&quot;headerlink&quot; title=&quot;1.1 传一个字符串&quot;&gt;&lt;/a&gt;1.1 传一个字符串&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;java文件&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;public class CoalType &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    public static String coalType_list(String data) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        String arr = null;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        try &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            String[] arg = new String[] &amp;#123; &amp;quot;E:\\Program Files\\Python36\\python.exe&amp;quot;, &amp;quot;E:\\Test\\test\\qiting.py&amp;quot;,data&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            Process proc = Runtime.getRuntime().exec(arg);// 执行py文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            String line = null;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            while ((line = in.readLine()) != null) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                arr = line;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            in.close();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            proc.waitFor();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; catch (IOException e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            e.printStackTrace();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125; catch (InterruptedException e) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            e.printStackTrace();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        return arr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    public static void main(String[] args) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        String data = &amp;quot;Lisa&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        String test_name = CoalType.coalType_list(data);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        System.out.println(test_name);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://mechenjuanjuan.github.io/categories/Java/"/>
+    
+      <category term="Python" scheme="http://mechenjuanjuan.github.io/categories/Java/Python/"/>
+    
+    
+      <category term="Java" scheme="http://mechenjuanjuan.github.io/tags/Java/"/>
+    
+      <category term="Python" scheme="http://mechenjuanjuan.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Git使用详情（二）</title>
-    <link href="https://chen77o.gitee.io/2019/10/14/chen_02/"/>
-    <id>https://chen77o.gitee.io/2019/10/14/chen_02/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/10/14/chen_02/"/>
+    <id>http://mechenjuanjuan.github.io/2019/10/14/chen_02/</id>
     <published>2019-10-14T03:58:41.514Z</published>
     <updated>2019-10-14T09:59:59.136Z</updated>
     
@@ -33,21 +124,21 @@
     
     </summary>
     
-      <category term="Git" scheme="https://chen77o.gitee.io/categories/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/categories/Git/"/>
     
     
-      <category term="Git" scheme="https://chen77o.gitee.io/tags/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/tags/Git/"/>
     
-      <category term="Svn" scheme="https://chen77o.gitee.io/tags/Svn/"/>
+      <category term="Svn" scheme="http://mechenjuanjuan.github.io/tags/Svn/"/>
     
-      <category term="Idea" scheme="https://chen77o.gitee.io/tags/Idea/"/>
+      <category term="Idea" scheme="http://mechenjuanjuan.github.io/tags/Idea/"/>
     
   </entry>
   
   <entry>
     <title>Git使用详情（一）</title>
-    <link href="https://chen77o.gitee.io/2019/10/10/chen_01/"/>
-    <id>https://chen77o.gitee.io/2019/10/10/chen_01/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/10/10/chen_01/"/>
+    <id>http://mechenjuanjuan.github.io/2019/10/10/chen_01/</id>
     <published>2019-10-10T07:00:22.815Z</published>
     <updated>2019-10-14T03:58:25.825Z</updated>
     
@@ -60,19 +151,19 @@
     
     </summary>
     
-      <category term="Git" scheme="https://chen77o.gitee.io/categories/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/categories/Git/"/>
     
     
-      <category term="Git" scheme="https://chen77o.gitee.io/tags/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/tags/Git/"/>
     
-      <category term="Svn" scheme="https://chen77o.gitee.io/tags/Svn/"/>
+      <category term="Svn" scheme="http://mechenjuanjuan.github.io/tags/Svn/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 部署到码云</title>
-    <link href="https://chen77o.gitee.io/2019/09/09/chen_two/"/>
-    <id>https://chen77o.gitee.io/2019/09/09/chen_two/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/09/09/chen_two/"/>
+    <id>http://mechenjuanjuan.github.io/2019/09/09/chen_two/</id>
     <published>2019-09-09T02:01:25.267Z</published>
     <updated>2019-09-10T07:16:33.139Z</updated>
     
@@ -88,21 +179,21 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://chen77o.gitee.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://chen77o.gitee.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/tags/Hexo/"/>
     
-      <category term="Next" scheme="https://chen77o.gitee.io/tags/Next/"/>
+      <category term="Next" scheme="http://mechenjuanjuan.github.io/tags/Next/"/>
     
-      <category term="码云" scheme="https://chen77o.gitee.io/tags/%E7%A0%81%E4%BA%91/"/>
+      <category term="码云" scheme="http://mechenjuanjuan.github.io/tags/%E7%A0%81%E4%BA%91/"/>
     
   </entry>
   
   <entry>
     <title>Hexo部署到Coding</title>
-    <link href="https://chen77o.gitee.io/2019/09/04/chen_one/"/>
-    <id>https://chen77o.gitee.io/2019/09/04/chen_one/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/09/04/chen_one/"/>
+    <id>http://mechenjuanjuan.github.io/2019/09/04/chen_one/</id>
     <published>2019-09-04T08:18:04.004Z</published>
     <updated>2019-09-12T10:08:16.569Z</updated>
     
@@ -125,21 +216,21 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://chen77o.gitee.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/categories/Hexo/"/>
     
     
-      <category term="Coding" scheme="https://chen77o.gitee.io/tags/Coding/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/tags/Hexo/"/>
     
-      <category term="Hexo" scheme="https://chen77o.gitee.io/tags/Hexo/"/>
+      <category term="Next" scheme="http://mechenjuanjuan.github.io/tags/Next/"/>
     
-      <category term="Next" scheme="https://chen77o.gitee.io/tags/Next/"/>
+      <category term="Coding" scheme="http://mechenjuanjuan.github.io/tags/Coding/"/>
     
   </entry>
   
   <entry>
     <title>茉莉雨</title>
-    <link href="https://chen77o.gitee.io/2019/08/16/Raindrops/"/>
-    <id>https://chen77o.gitee.io/2019/08/16/Raindrops/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/08/16/Raindrops/"/>
+    <id>http://mechenjuanjuan.github.io/2019/08/16/Raindrops/</id>
     <published>2019-08-16T07:35:51.164Z</published>
     <updated>2019-09-12T10:10:39.644Z</updated>
     
@@ -158,19 +249,19 @@
     
     </summary>
     
-      <category term="Other" scheme="https://chen77o.gitee.io/categories/Other/"/>
+      <category term="Other" scheme="http://mechenjuanjuan.github.io/categories/Other/"/>
     
     
-      <category term="无题" scheme="https://chen77o.gitee.io/tags/%E6%97%A0%E9%A2%98/"/>
+      <category term="无题" scheme="http://mechenjuanjuan.github.io/tags/%E6%97%A0%E9%A2%98/"/>
     
-      <category term="茉莉雨" scheme="https://chen77o.gitee.io/tags/%E8%8C%89%E8%8E%89%E9%9B%A8/"/>
+      <category term="茉莉雨" scheme="http://mechenjuanjuan.github.io/tags/%E8%8C%89%E8%8E%89%E9%9B%A8/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://chen77o.gitee.io/2019/08/15/hello-world/"/>
-    <id>https://chen77o.gitee.io/2019/08/15/hello-world/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/08/15/hello-world/"/>
+    <id>http://mechenjuanjuan.github.io/2019/08/15/hello-world/</id>
     <published>2019-08-15T03:00:16.843Z</published>
     <updated>2019-09-09T09:13:02.697Z</updated>
     
@@ -188,10 +279,10 @@
     
     </summary>
     
-      <category term="Other" scheme="https://chen77o.gitee.io/categories/Other/"/>
+      <category term="Other" scheme="http://mechenjuanjuan.github.io/categories/Other/"/>
     
     
-      <category term="Hello" scheme="https://chen77o.gitee.io/tags/Hello/"/>
+      <category term="Hello" scheme="http://mechenjuanjuan.github.io/tags/Hello/"/>
     
   </entry>
   
