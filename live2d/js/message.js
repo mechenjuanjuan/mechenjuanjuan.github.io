@@ -144,6 +144,11 @@ function hideMessage(timeout){
 function initLive2d (){
     $('.hide-button').fadeOut(0).on('click', () => {
         $('#landlord').css('display', 'none')
+		$('.show-button').css('display', 'block')
+    })
+	$('.show-button').fadeOut(0).on('click', () => {
+        $('#landlord').css('display', 'block')
+		$('.show-button').css('display', 'none')
     })
     $('#landlord').hover(() => {
         $('.hide-button').fadeIn(600)
