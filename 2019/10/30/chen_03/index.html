@@ -89,22 +89,20 @@
 
 
 
-<meta name="description" content="1、通过Runtime进行调用1.1 传一个字符串 java文件12345678910111213141516171819202122232425262728public class CoalType &amp;#123;    public static String coalType_list(String data) &amp;#123;        String arr = null;        t">
 <meta name="keywords" content="Java,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java调用Python传list(多个list，不同类型list)参数">
 <meta property="og:url" content="https://chen77o.gitee.io/2019/10/30/chen_03/index.html">
 <meta property="og:site_name" content="Chen77&#39;s Blog">
-<meta property="og:description" content="1、通过Runtime进行调用1.1 传一个字符串 java文件12345678910111213141516171819202122232425262728public class CoalType &amp;#123;    public static String coalType_list(String data) &amp;#123;        String arr = null;        t">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://chen77o.gitee.io/post_image/img/images6.png">
 <meta property="og:image" content="https://chen77o.gitee.io/post_image/chen_03/1.jpg">
 <meta property="og:image" content="https://chen77o.gitee.io/post_image/chen_03/2.jpg">
 <meta property="og:image" content="https://chen77o.gitee.io/post_image/chen_03/3.jpg">
-<meta property="og:updated_time" content="2020-03-24T03:05:16.970Z">
+<meta property="og:updated_time" content="2020-03-26T09:21:19.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java调用Python传list(多个list，不同类型list)参数">
-<meta name="twitter:description" content="1、通过Runtime进行调用1.1 传一个字符串 java文件12345678910111213141516171819202122232425262728public class CoalType &amp;#123;    public static String coalType_list(String data) &amp;#123;        String arr = null;        t">
-<meta name="twitter:image" content="https://chen77o.gitee.io/post_image/chen_03/1.jpg">
+<meta name="twitter:image" content="https://chen77o.gitee.io/post_image/img/images6.png">
 
 
 
@@ -449,12 +447,13 @@
       
 
       
-        <h2 id="1、通过Runtime进行调用"><a href="#1、通过Runtime进行调用" class="headerlink" title="1、通过Runtime进行调用"></a>1、通过Runtime进行调用</h2><h4 id="1-1-传一个字符串"><a href="#1-1-传一个字符串" class="headerlink" title="1.1 传一个字符串"></a>1.1 传一个字符串</h4><ul>
-<li>java文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class CoalType &#123;</span><br><span class="line">    public static String coalType_list(String data) &#123;</span><br><span class="line">        String arr = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            String[] arg = new String[] &#123; &quot;E:\\Program Files\\Python36\\python.exe&quot;, &quot;E:\\Test\\test\\qiting.py&quot;,data&#125;;</span><br><span class="line">            Process proc = Runtime.getRuntime().exec(arg);// 执行py文件</span><br><span class="line"></span><br><span class="line">            BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));</span><br><span class="line">            String line = null;</span><br><span class="line">            while ((line = in.readLine()) != null) &#123;</span><br><span class="line">                arr = line;</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">            proc.waitFor();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String data = &quot;Lisa&quot;;</span><br><span class="line">        String test_name = CoalType.coalType_list(data);</span><br><span class="line">        System.out.println(test_name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
+        <center><img src="/post_image/img/images6.png"></center>
 <a id="more"></a>
+## 1、通过Runtime进行调用
+#### 1.1 传一个字符串
+* java文件
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class CoalType &#123;</span><br><span class="line">    public static String coalType_list(String data) &#123;</span><br><span class="line">        String arr = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            String[] arg = new String[] &#123; &quot;E:\\Program Files\\Python36\\python.exe&quot;, &quot;E:\\Test\\test\\qiting.py&quot;,data&#125;;</span><br><span class="line">            Process proc = Runtime.getRuntime().exec(arg);// 执行py文件</span><br><span class="line"></span><br><span class="line">            BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));</span><br><span class="line">            String line = null;</span><br><span class="line">            while ((line = in.readLine()) != null) &#123;</span><br><span class="line">                arr = line;</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">            proc.waitFor();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String data = &quot;Lisa&quot;;</span><br><span class="line">        String test_name = CoalType.coalType_list(data);</span><br><span class="line">        System.out.println(test_name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>py文件</li>
 </ul>
@@ -735,7 +734,7 @@
               
                 <a href="/chen77o/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -757,7 +756,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/chen77o/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -852,7 +851,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、通过Runtime进行调用"><span class="nav-number">1.</span> <span class="nav-text">1、通过Runtime进行调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-传一个字符串"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 传一个字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-传一个list集合"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.1 传一个list集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-传两个list集合"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.1 传两个list集合</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-传一个list集合"><span class="nav-number">1.</span> <span class="nav-text">1.1 传一个list集合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-传两个list集合"><span class="nav-number">2.</span> <span class="nav-text">1.1 传两个list集合</span></a></li></ol></div>
             
 			
           </div>
@@ -869,7 +868,7 @@
 			
 			<div id="myCanvasContainer" class="widget tagcloud">
 				<canvas width="250" height="250" id="resCanvas" style="margin-left: -10px;">
-					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Coding/">Coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Hello/">Hello</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Idea/">Idea</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Maven/">Maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Svn/">Svn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/mapper/">mapper</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/无题/">无题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/码云/">码云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/茉莉雨/">茉莉雨</a><span class="tag-list-count">1</span></li></ul>
+					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Coding/">Coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Hello/">Hello</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Idea/">Idea</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Maven/">Maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Svn/">Svn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/mapper/">mapper</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/码云/">码云</a><span class="tag-list-count">1</span></li></ul>
 				</canvas>
 			</div>
 		</div>

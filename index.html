@@ -443,19 +443,28 @@
 
       
         
-          
-          
-系统是windows64位，安装了python3.6。
-
-安装顺序就是numpy，Scipy，matplotlib，sklearn，pandas。
-
-首先是更新一下pip （确保pip能使用）
-
-然后将setuptools, numpy, python-dateutil, pytz, pyparsing, cycler,matplotlib分别代替最后的pip并运行
-
-
-123456789101
-          ...
+          <center><img src="/post_image/img/images17.png"></center>
+		  
+		  
+			<div class="home-post-tags">
+				
+				<a href="/chen77o/tags/python/" rel="tag">python</a>
+				
+				<script type="text/javascript">
+				var tagsall=document.getElementsByClassName("home-post-tags")
+				for (var i = tagsall.length - 1; i >= 0; i--){
+					var tags=tagsall[i].getElementsByTagName("a");
+					for (var j = tags.length - 1; j >= 0; j--) {
+						var r=Math.floor(Math.random()*255);
+						var g=Math.floor(Math.random()*255);
+						var b=Math.floor(Math.random()*255);
+						tags[j].style.background = "rgb("+r+","+g+","+b+")";
+					}
+				}
+				</script>
+			</div>
+			
+			
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/chen77o/2019/12/18/chen_07/#more" rel="contents">
@@ -641,12 +650,28 @@
 
       
         
-          
-          
-定时不停的调用函数
-
-12345678910111.var timer；	function time()&#123;       //定时器，每隔一秒获取一次       timer = self.setinterval(getSetParam, 1000);   &#125;2.var interval =self.setinterval(function()&#123;	&#125;,100
-          ...
+          <center><img src="/post_image/img/images9.png"></center>
+		  
+		  
+			<div class="home-post-tags">
+				
+				<a href="/chen77o/tags/JS/" rel="tag">JS</a>
+				
+				<script type="text/javascript">
+				var tagsall=document.getElementsByClassName("home-post-tags")
+				for (var i = tagsall.length - 1; i >= 0; i--){
+					var tags=tagsall[i].getElementsByTagName("a");
+					for (var j = tags.length - 1; j >= 0; j--) {
+						var r=Math.floor(Math.random()*255);
+						var g=Math.floor(Math.random()*255);
+						var b=Math.floor(Math.random()*255);
+						tags[j].style.background = "rgb("+r+","+g+","+b+")";
+					}
+				}
+				</script>
+			</div>
+			
+			
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/chen77o/2019/12/18/chen_06/#more" rel="contents">
@@ -832,8 +857,7 @@
 
       
         
-          <ul>
-<li>一般maven项目，dao的mapper映射文件会映射在resources下，创建同包同名的xml，这样是没问题的<center><img src="/post_image/chen_05/1.png"></center>
+          <center><img src="/post_image/img/images13.png"></center>
 		  
 		  
 			<div class="home-post-tags">
@@ -870,7 +894,7 @@
           <!--/noindex-->
         
       
-    </li></ul></div>
+    </div>
 	
 	<div>
 	  
@@ -1046,7 +1070,7 @@
 
       
         
-          <h2 id="1、Idea创建"><a href="#1、Idea创建" class="headerlink" title="1、Idea创建"></a>1、Idea创建</h2><center><img src="/post_image/chen_04/1.png"></center>
+          <center><img src="/post_image/img/images7.png"></center>
 		  
 		  
 			<div class="home-post-tags">
@@ -1255,11 +1279,7 @@
 
       
         
-          <h2 id="1、通过Runtime进行调用"><a href="#1、通过Runtime进行调用" class="headerlink" title="1、通过Runtime进行调用"></a>1、通过Runtime进行调用</h2><h4 id="1-1-传一个字符串"><a href="#1-1-传一个字符串" class="headerlink" title="1.1 传一个字符串"></a>1.1 传一个字符串</h4><ul>
-<li>java文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">public class CoalType &#123;</span><br><span class="line">    public static String coalType_list(String data) &#123;</span><br><span class="line">        String arr = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            String[] arg = new String[] &#123; &quot;E:\\Program Files\\Python36\\python.exe&quot;, &quot;E:\\Test\\test\\qiting.py&quot;,data&#125;;</span><br><span class="line">            Process proc = Runtime.getRuntime().exec(arg);// 执行py文件</span><br><span class="line"></span><br><span class="line">            BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));</span><br><span class="line">            String line = null;</span><br><span class="line">            while ((line = in.readLine()) != null) &#123;</span><br><span class="line">                arr = line;</span><br><span class="line">            &#125;</span><br><span class="line">            in.close();</span><br><span class="line">            proc.waitFor();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; catch (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        String data = &quot;Lisa&quot;;</span><br><span class="line">        String test_name = CoalType.coalType_list(data);</span><br><span class="line">        System.out.println(test_name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
+          <center><img src="/post_image/img/images6.png"></center>
 		  
 		  
 			<div class="home-post-tags">
@@ -1468,9 +1488,7 @@
 
       
         
-          <h2 id="1、远程仓库"><a href="#1、远程仓库" class="headerlink" title="1、远程仓库"></a>1、远程仓库</h2><h5 id="1-1-添加远程库"><a href="#1-1-添加远程库" class="headerlink" title="1.1 添加远程库"></a>1.1 添加远程库</h5><p>上一篇我们已经在本地创建了一个Git仓库，又想让其他人来协作开发，此时就可以把本地仓库同步到远程仓库，同时还增加了本地仓库的一个备份。<br>常用的远程仓库就是github：<a href="https://github.com/，接下来我们演示如何将本地代码同步到github。" target="_blank" rel="noopener">https://github.com/，接下来我们演示如何将本地代码同步到github。</a></p>
-<h5 id="1-1-1-在github上创建仓库"><a href="#1-1-1-在github上创建仓库" class="headerlink" title="1.1.1 在github上创建仓库"></a>1.1.1 在github上创建仓库</h5><p>首先你得在github上创建一个账号，这个就不演示了。然后在github上创建一个仓库：</p>
-<center><img src="/post_image/chen_02/1.png"></center>
+          <center><img src="/post_image/img/images8.png"></center>
 		  
 		  
 			<div class="home-post-tags">
@@ -1681,8 +1699,7 @@
 
       
         
-          <h2 id="1、Git与Svn对比"><a href="#1、Git与Svn对比" class="headerlink" title="1、Git与Svn对比"></a>1、Git与Svn对比</h2><h5 id="1-1-Svn"><a href="#1-1-Svn" class="headerlink" title="1.1    Svn"></a>1.1    Svn</h5><p>&ensp;&ensp;&ensp;SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而干活的时候，用的都是自己的电脑，所以首先要从中央服务器哪里得到最新的版本，然后干活，干完后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，如果在局域网还可以，带宽够大，速度够快，如果在互联网下，如果网速慢的话，就郁闷了。<br>&ensp;&ensp;&ensp;下图就是标准的集中式版本控制工具管理方式：</p>
-<center><img src="/post_image/chen_01/1.jpg"></center>
+          <center><img src="/post_image/img/images.png"></center>
 		  
 		  
 			<div class="home-post-tags">
@@ -1891,11 +1908,7 @@
 
       
         
-          <h3 id="注册码云"><a href="#注册码云" class="headerlink" title="注册码云"></a>注册码云</h3><ul>
-<li>码云官网：<a href="https://gitee.com/" target="_blank" rel="noopener">https://gitee.com/</a></li>
-<li>注册完成后创建一个新仓库，如下图</li>
-</ul>
-<center><img src="/post_image/chen_two/1.png"></center>
+          <center><img src="/post_image/img/images14.png"></center>
 		  
 		  
 			<div class="home-post-tags">
@@ -2104,18 +2117,7 @@
 
       
         
-          <ul>
-<li>需要安装的工具我就不多介绍了</li>
-</ul>
-<h3 id="注册Coding"><a href="#注册Coding" class="headerlink" title="注册Coding"></a>注册Coding</h3><ul>
-<li>Cdoing官网：<a href="https://coding.net/" target="_blank" rel="noopener">https://coding.net/</a></li>
-<li>注册完成后创建一个新项目，如下图<center><img src="/post_image/chen_one/1.png">
-<img src="/post_image/chen_one/2.png">
-</center>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">项目名称、项目描述随意填写。然后点击创建。</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
+          <center><img src="/post_image/img/images8.png"></center>
 		  
 		  
 			<div class="home-post-tags">
@@ -2197,7 +2199,7 @@
   <div id="aplayer" width="100%" height="100%"></div>
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chen77o.gitee.io/chen77o/2019/08/16/Raindrops/">
+    <link itemprop="mainEntityOfPage" href="https://chen77o.gitee.io/chen77o/2019/08/15/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chen77">
@@ -2216,7 +2218,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/chen77o/2019/08/16/Raindrops/" itemprop="url">茉莉雨</a></h1>
+                <a class="post-title-link" href="/chen77o/2019/08/15/hello-world/" itemprop="url">Hello World</a></h1>
         
 
         <div class="post-meta">
@@ -2228,8 +2230,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-16T15:35:51+08:00">
-                2019-08-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-15T11:00:16+08:00">
+                2019-08-15
               </time>
             
 
@@ -2277,14 +2279,14 @@
                  <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  206字
+                  92字
                 </span>
               
 		  
 
           
 		 
-             <span id="/chen77o/2019/08/16/Raindrops/" class="leancloud_visitors" data-flag-title="茉莉雨">
+             <span id="/chen77o/2019/08/15/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2324,21 +2326,12 @@
 
       
         
-          <center><img src="/post_image/qiutian.jpg">
-<br>
-<font size="4">
-
-<p>垂柳斜向茉莉雨</p>
-<p>向晚伴残笛</p>
-<p>宣白落笔全是你</p>
-</font></center>
+          <center><img src="/post_image/img/images16.png"></center>
 		  
 		  
 			<div class="home-post-tags">
 				
-				<a href="/chen77o/tags/无题/" rel="tag">无题</a>
-				
-				<a href="/chen77o/tags/茉莉雨/" rel="tag">茉莉雨</a>
+				<a href="/chen77o/tags/Hello/" rel="tag">Hello</a>
 				
 				<script type="text/javascript">
 				var tagsall=document.getElementsByClassName("home-post-tags")
@@ -2357,7 +2350,7 @@
 			
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/chen77o/2019/08/16/Raindrops/#more" rel="contents">
+            <a class="btn" href="/chen77o/2019/08/15/hello-world/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2401,10 +2394,6 @@
   </section>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/chen77o/page/2/">2</a><a class="extend next" rel="next" href="/chen77o/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -2449,7 +2438,7 @@
               
                 <a href="/chen77o/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2471,7 +2460,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/chen77o/tags/index.html">
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2567,7 +2556,7 @@
 			
 			<div id="myCanvasContainer" class="widget tagcloud">
 				<canvas width="250" height="250" id="resCanvas" style="margin-left: -10px;">
-					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Coding/">Coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Hello/">Hello</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Idea/">Idea</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Maven/">Maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Svn/">Svn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/mapper/">mapper</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/无题/">无题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/码云/">码云</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/茉莉雨/">茉莉雨</a><span class="tag-list-count">1</span></li></ul>
+					<ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Coding/">Coding</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Hello/">Hello</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Idea/">Idea</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Maven/">Maven</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Mybatis/">Mybatis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Python/">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/Svn/">Svn</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/mapper/">mapper</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/chen77o/tags/码云/">码云</a><span class="tag-list-count">1</span></li></ul>
 				</canvas>
 			</div>
 		</div>
