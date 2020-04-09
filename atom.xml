@@ -3,11 +3,11 @@
   <title>Chen77&#39;s Blog</title>
   
   <subtitle>愿喜欢跟合适撞个满怀</subtitle>
-  <link href="/chen77o/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="https://chen77o.gitee.io/"/>
+  <link href="http://mechenjuanjuan.github.io/"/>
   <updated>2020-03-26T09:21:15.017Z</updated>
-  <id>https://chen77o.gitee.io/</id>
+  <id>http://mechenjuanjuan.github.io/</id>
   
   <author>
     <name>Chen77</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>在windows下安装python常用的库：numpy，Scipy，matplotlib，sklearn，pandas</title>
-    <link href="https://chen77o.gitee.io/2019/12/18/chen_07/"/>
-    <id>https://chen77o.gitee.io/2019/12/18/chen_07/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/12/18/chen_07/"/>
+    <id>http://mechenjuanjuan.github.io/2019/12/18/chen_07/</id>
     <published>2019-12-18T02:47:33.928Z</published>
     <updated>2020-03-26T09:21:15.017Z</updated>
     
@@ -31,17 +31,17 @@
     
     </summary>
     
-      <category term="python" scheme="https://chen77o.gitee.io/categories/python/"/>
+      <category term="python" scheme="http://mechenjuanjuan.github.io/categories/python/"/>
     
     
-      <category term="python" scheme="https://chen77o.gitee.io/tags/python/"/>
+      <category term="python" scheme="http://mechenjuanjuan.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>关于前端定时器</title>
-    <link href="https://chen77o.gitee.io/2019/12/18/chen_06/"/>
-    <id>https://chen77o.gitee.io/2019/12/18/chen_06/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/12/18/chen_06/"/>
+    <id>http://mechenjuanjuan.github.io/2019/12/18/chen_06/</id>
     <published>2019-12-18T02:19:03.937Z</published>
     <updated>2020-03-26T09:11:43.920Z</updated>
     
@@ -53,17 +53,17 @@
     
     </summary>
     
-      <category term="JS" scheme="https://chen77o.gitee.io/categories/JS/"/>
+      <category term="JS" scheme="http://mechenjuanjuan.github.io/categories/JS/"/>
     
     
-      <category term="JS" scheme="https://chen77o.gitee.io/tags/JS/"/>
+      <category term="JS" scheme="http://mechenjuanjuan.github.io/tags/JS/"/>
     
   </entry>
   
   <entry>
     <title>关于Maven项目下使用Mybatis时，找不到mapper映射文件的问题</title>
-    <link href="https://chen77o.gitee.io/2019/11/15/chen_05/"/>
-    <id>https://chen77o.gitee.io/2019/11/15/chen_05/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/11/15/chen_05/"/>
+    <id>http://mechenjuanjuan.github.io/2019/11/15/chen_05/</id>
     <published>2019-11-15T09:44:01.815Z</published>
     <updated>2020-03-26T09:22:34.366Z</updated>
     
@@ -75,23 +75,23 @@
     
     </summary>
     
-      <category term="Maven" scheme="https://chen77o.gitee.io/categories/Maven/"/>
+      <category term="Maven" scheme="http://mechenjuanjuan.github.io/categories/Maven/"/>
     
     
-      <category term="Idea" scheme="https://chen77o.gitee.io/tags/Idea/"/>
+      <category term="Idea" scheme="http://mechenjuanjuan.github.io/tags/Idea/"/>
     
-      <category term="Maven" scheme="https://chen77o.gitee.io/tags/Maven/"/>
+      <category term="Maven" scheme="http://mechenjuanjuan.github.io/tags/Maven/"/>
     
-      <category term="Mybatis" scheme="https://chen77o.gitee.io/tags/Mybatis/"/>
+      <category term="Mybatis" scheme="http://mechenjuanjuan.github.io/tags/Mybatis/"/>
     
-      <category term="mapper" scheme="https://chen77o.gitee.io/tags/mapper/"/>
+      <category term="mapper" scheme="http://mechenjuanjuan.github.io/tags/mapper/"/>
     
   </entry>
   
   <entry>
     <title>Idea创建Maven项目</title>
-    <link href="https://chen77o.gitee.io/2019/11/15/chen_04/"/>
-    <id>https://chen77o.gitee.io/2019/11/15/chen_04/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/11/15/chen_04/"/>
+    <id>http://mechenjuanjuan.github.io/2019/11/15/chen_04/</id>
     <published>2019-11-15T08:44:01.545Z</published>
     <updated>2020-03-26T09:09:53.224Z</updated>
     
@@ -103,19 +103,19 @@
     
     </summary>
     
-      <category term="Maven" scheme="https://chen77o.gitee.io/categories/Maven/"/>
+      <category term="Maven" scheme="http://mechenjuanjuan.github.io/categories/Maven/"/>
     
     
-      <category term="Idea" scheme="https://chen77o.gitee.io/tags/Idea/"/>
+      <category term="Idea" scheme="http://mechenjuanjuan.github.io/tags/Idea/"/>
     
-      <category term="Maven" scheme="https://chen77o.gitee.io/tags/Maven/"/>
+      <category term="Maven" scheme="http://mechenjuanjuan.github.io/tags/Maven/"/>
     
   </entry>
   
   <entry>
     <title>Java调用Python传list(多个list，不同类型list)参数</title>
-    <link href="https://chen77o.gitee.io/2019/10/30/chen_03/"/>
-    <id>https://chen77o.gitee.io/2019/10/30/chen_03/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/10/30/chen_03/"/>
+    <id>http://mechenjuanjuan.github.io/2019/10/30/chen_03/</id>
     <published>2019-10-30T09:17:37.206Z</published>
     <updated>2020-03-26T09:21:19.607Z</updated>
     
@@ -127,19 +127,19 @@
     
     </summary>
     
-      <category term="Python" scheme="https://chen77o.gitee.io/categories/Python/"/>
+      <category term="Python" scheme="http://mechenjuanjuan.github.io/categories/Python/"/>
     
     
-      <category term="Java" scheme="https://chen77o.gitee.io/tags/Java/"/>
+      <category term="Java" scheme="http://mechenjuanjuan.github.io/tags/Java/"/>
     
-      <category term="Python" scheme="https://chen77o.gitee.io/tags/Python/"/>
+      <category term="Python" scheme="http://mechenjuanjuan.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Git使用详情（二）</title>
-    <link href="https://chen77o.gitee.io/2019/10/14/chen_02/"/>
-    <id>https://chen77o.gitee.io/2019/10/14/chen_02/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/10/14/chen_02/"/>
+    <id>http://mechenjuanjuan.github.io/2019/10/14/chen_02/</id>
     <published>2019-10-14T03:58:41.514Z</published>
     <updated>2020-04-09T09:39:23.480Z</updated>
     
@@ -151,21 +151,21 @@
     
     </summary>
     
-      <category term="Git" scheme="https://chen77o.gitee.io/categories/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/categories/Git/"/>
     
     
-      <category term="Git" scheme="https://chen77o.gitee.io/tags/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/tags/Git/"/>
     
-      <category term="Svn" scheme="https://chen77o.gitee.io/tags/Svn/"/>
+      <category term="Svn" scheme="http://mechenjuanjuan.github.io/tags/Svn/"/>
     
-      <category term="Idea" scheme="https://chen77o.gitee.io/tags/Idea/"/>
+      <category term="Idea" scheme="http://mechenjuanjuan.github.io/tags/Idea/"/>
     
   </entry>
   
   <entry>
     <title>Git使用详情（一）</title>
-    <link href="https://chen77o.gitee.io/2019/10/10/chen_01/"/>
-    <id>https://chen77o.gitee.io/2019/10/10/chen_01/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/10/10/chen_01/"/>
+    <id>http://mechenjuanjuan.github.io/2019/10/10/chen_01/</id>
     <published>2019-10-10T07:00:22.815Z</published>
     <updated>2020-03-26T09:07:57.096Z</updated>
     
@@ -177,19 +177,19 @@
     
     </summary>
     
-      <category term="Git" scheme="https://chen77o.gitee.io/categories/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/categories/Git/"/>
     
     
-      <category term="Git" scheme="https://chen77o.gitee.io/tags/Git/"/>
+      <category term="Git" scheme="http://mechenjuanjuan.github.io/tags/Git/"/>
     
-      <category term="Svn" scheme="https://chen77o.gitee.io/tags/Svn/"/>
+      <category term="Svn" scheme="http://mechenjuanjuan.github.io/tags/Svn/"/>
     
   </entry>
   
   <entry>
     <title>Hexo 部署到码云</title>
-    <link href="https://chen77o.gitee.io/2019/09/09/chen_two/"/>
-    <id>https://chen77o.gitee.io/2019/09/09/chen_two/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/09/09/chen_two/"/>
+    <id>http://mechenjuanjuan.github.io/2019/09/09/chen_two/</id>
     <published>2019-09-09T02:01:25.267Z</published>
     <updated>2020-03-26T09:12:29.092Z</updated>
     
@@ -201,19 +201,19 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://chen77o.gitee.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://chen77o.gitee.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/tags/Hexo/"/>
     
-      <category term="码云" scheme="https://chen77o.gitee.io/tags/%E7%A0%81%E4%BA%91/"/>
+      <category term="码云" scheme="http://mechenjuanjuan.github.io/tags/%E7%A0%81%E4%BA%91/"/>
     
   </entry>
   
   <entry>
     <title>Hexo部署到Coding</title>
-    <link href="https://chen77o.gitee.io/2019/09/04/chen_one/"/>
-    <id>https://chen77o.gitee.io/2019/09/04/chen_one/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/09/04/chen_one/"/>
+    <id>http://mechenjuanjuan.github.io/2019/09/04/chen_one/</id>
     <published>2019-09-04T08:18:04.004Z</published>
     <updated>2020-03-26T09:12:32.408Z</updated>
     
@@ -225,19 +225,19 @@
     
     </summary>
     
-      <category term="Hexo" scheme="https://chen77o.gitee.io/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/categories/Hexo/"/>
     
     
-      <category term="Hexo" scheme="https://chen77o.gitee.io/tags/Hexo/"/>
+      <category term="Coding" scheme="http://mechenjuanjuan.github.io/tags/Coding/"/>
     
-      <category term="Coding" scheme="https://chen77o.gitee.io/tags/Coding/"/>
+      <category term="Hexo" scheme="http://mechenjuanjuan.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://chen77o.gitee.io/2019/08/15/hello-world/"/>
-    <id>https://chen77o.gitee.io/2019/08/15/hello-world/</id>
+    <link href="http://mechenjuanjuan.github.io/2019/08/15/hello-world/"/>
+    <id>http://mechenjuanjuan.github.io/2019/08/15/hello-world/</id>
     <published>2019-08-15T03:00:16.843Z</published>
     <updated>2020-03-26T09:12:59.720Z</updated>
     
@@ -249,10 +249,10 @@
     
     </summary>
     
-      <category term="Other" scheme="https://chen77o.gitee.io/categories/Other/"/>
+      <category term="Other" scheme="http://mechenjuanjuan.github.io/categories/Other/"/>
     
     
-      <category term="Hello" scheme="https://chen77o.gitee.io/tags/Hello/"/>
+      <category term="Hello" scheme="http://mechenjuanjuan.github.io/tags/Hello/"/>
     
   </entry>
   
